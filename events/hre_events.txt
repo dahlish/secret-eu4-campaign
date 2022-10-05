@@ -1,0 +1,143 @@
+namespace = secret_hre_events
+
+country_event = {
+	id = secret_hre_events.1
+	title = "secret_hre_events.1.t"
+	desc = "secret_hre_events.1.desc"
+	
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		OR = {
+			tag = BRU
+			tag = FRI
+            tag = CLI
+			tag = SWI
+            tag = UBV
+		}
+		is_emperor = yes
+	}
+	option = { #Abolish the law
+		name = "secret_hre_events.1.a"
+		BRU = {
+			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
+		}
+		FRI = {
+			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
+		}
+		CLI = {
+			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
+		}
+		SWI = {
+			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
+		}
+		UBV = {
+			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
+		}	
+
+		add_prestige = -30
+		add_adm_power = -100
+		add_dip_power = -100
+	}
+
+	option = { #Keep the law
+		name = "secret_hre_events.1.b"
+		add_prestige = 30
+		add_adm_power = 100
+		add_dip_power = 100
+	}
+}
+
+country_event = {
+	id = secret_hre_events.2
+	title = "secret_hre_events.2.t"
+	desc = "secret_hre_events.2.desc"
+
+	major = yes
+	fire_only_once = yes
+
+	immediate = {
+		save_event_target_as = gets_vassal_event_target
+	}
+	
+	trigger = {
+		OR = {
+			tag = BRU
+			tag = FRI
+            tag = CLI
+			tag = SWI
+            tag = UBV
+		}
+		is_elector = no
+		exists = BRA
+		is_year = 1450
+	}
+
+	option = { #We will be the new electors.
+		name = "secret_hre_events.2.a"
+		BRA = {
+			elector = no
+		}
+		elector = yes
+		add_prestige = 50
+		set_government_rank_force = 2
+	}
+	option = { #We should try to stage a state coup.
+		name = "secret_hre_events.2.b"
+
+		ai_chance = {
+			factor = 100
+		}
+
+		BRA = {
+				country_event = {
+				id = secret_hre_events.3
+				days = 30
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+}
+
+country_event = {
+	id = secret_hre_events.3
+	title = "secret_hre_events.3.t"
+	desc = "secret_hre_events.3.desc"
+
+	fire_only_once = yes
+	major = yes
+	is_triggered_only = yes
+
+	option = { #It is already too late.
+		ai_chance = {
+			factor = 75
+		}
+		name = "secret_hre_events.3.a"
+		event_target:gets_vassal_event_target = {
+			create_subject = {
+				subject_type = vassal
+				subject = BRA
+			}
+		}
+		add_corruption = 5
+	}
+	option = { #We cannot let this happen!
+		ai_chance = {
+			factor = 25
+		}
+		name = "secret_hre_events.3.b"
+
+		event_target:gets_vassal_event_target = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = BRA
+			}
+		}
+		add_mil_power = 100
+		add_prestige = 25
+	}
+}

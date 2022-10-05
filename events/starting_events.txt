@@ -8,11 +8,13 @@ country_event = {
     trigger = {
         OR = {
             tag = BRU
-			tag = BOH
 			tag = FRI
             tag = CLI
 			tag = SWI
             tag = UBV
+        }
+        NOT = {
+            has_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
         }
     }
 
