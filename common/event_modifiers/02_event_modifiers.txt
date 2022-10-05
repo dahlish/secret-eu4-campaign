@@ -17,6 +17,7 @@ secret_increased_aggressive_expansion_phase_one_medium = {
 }
 secret_reduced_governing_capacity = {
 	governing_capacity_modifier = -0.75
+	ae_impact = 0.35
 }
 secret_iceland_modifiers = {
 	ae_impact = 1
@@ -77,4 +78,11 @@ preparations_for_independence = {
 	land_forcelimit_modifier = 0.25
 	infantry_cost = -0.3
 	cavalry_cost = -0.3
+	naval_forcelimit_modifier = 1
+	naval_morale = 0.2
+}
+
+never_slaves = {
+	prestige = 1
+	global_unrest = -2
 }

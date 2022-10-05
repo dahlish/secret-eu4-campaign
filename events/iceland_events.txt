@@ -77,11 +77,16 @@ country_event = {
 		is_year = 1450
 	}
 
-	option = { #We should make this trade.
+	option = { #This surely sounds like a win-win situation.
+		name = "secret_iceland_events.2.a"
 		NOR = {
-			add_liberty_desire = 75
+			add_liberty_desire = 100
+			add_country_modifier = {
+				name = preparations_for_independence
+				duration = 3650
+			}
+			add_manpower = 10
 		}
-		
 		DAN = {
 			create_subject = {
 				subject_type = march
@@ -118,18 +123,48 @@ country_event = {
 		371 = {
 			change_religion = catholic
 		}
+		add_truce_with = DAN
 	}
-	option = { #We will never be slaves.
+	option = { #We will never be slaves, we will be liberators.
+		name = "secret_iceland_events.2.b"
+		add_prestige = 50
+		support_independence_of = NOR
+
+		add_country_modifier = {
+			name = never_slaves
+			duration = 3650
+		}
+
 		add_historical_rival = DAN
 		DAN = {
 			add_historical_rival = ICE
 		}
 		NOR = {
-			add_liberty_desire = 75
+			add_liberty_desire = 100
 			add_opinion = {
 				who = ICE
 				modifier = iceland_norway_friends
+		}
+			add_country_modifier = {
+				name = preparations_for_independence
+				duration = 3650
 			}
+		create_admiral = {
+			tradition = 80
+		}
+
+		galley = 17
+		galley = 17
+		galley = 17
+		galley = 17
+		galley = 17
+		galley = 17
+		galley = 17
+		galley = 17
+		galley = 17
+		galley = 17
+
+		add_manpower = 10
 		add_historical_friend = ICE
 		remove_historical_friend = DAN
 		}
@@ -139,6 +174,7 @@ country_event = {
 		}
 		add_historical_friend = ICE
 		remove_historical_friend = DAN
+		add_years_of_income = -3
 	}
 
 }
