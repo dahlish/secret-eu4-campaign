@@ -1,0 +1,111 @@
+namespace = secret_starting_events
+
+country_event = {
+    id = secret_starting_events.1
+    title = "secret_starting_events.1.t"
+	desc = "secret_starting_events.1.desc"
+
+    trigger = {
+        OR = {
+            tag = BRU
+			tag = BOH
+			tag = FRI
+            tag = CLI
+			tag = SWI
+            tag = UBV
+        }
+    }
+
+    option = {
+        name = "secret_starting_events.1.a"
+        add_country_modifier = {
+            name = "secret_increased_aggressive_expansion_phase_one_hard"
+            desc = "desc_secret_increased_aggressive_expansion_phase_one_hard"
+            duration = 56940
+        }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+}
+
+country_event = {
+    id = secret_starting_events.2
+    title = "secret_starting_events.2.t"
+	desc = "secret_starting_events.2.desc"
+
+    trigger = {
+        OR = {
+            tag = POL
+            tag = GOT
+            tag = RIG
+        }
+    }
+
+    option = {
+        name = "secret_starting_events.2.a"
+        add_country_modifier = {
+            name = "secret_increased_aggressive_expansion_phase_one_medium"
+            desc = "desc_secret_increased_aggressive_expansion_phase_one_medium"
+            duration = 56940
+        }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+}
+
+country_event = {
+    id = secret_starting_events.3
+    title = "secret_starting_events.3.t"
+	desc = "secret_starting_events.3.desc"
+
+    fire_only_once = yes
+    
+    trigger = {
+        tag = SWE
+    }
+
+    option = {
+        name = "secret_starting_events.3.a"
+        add_country_modifier = {
+            name = "secret_reduced_governing_capacity"
+            desc = "desc_secret_reduced_governing_capacity"
+            duration = 56940
+        }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+}
+
+country_event = {
+    id = secret_starting_events.4
+    title = "secret_starting_events.4.t"
+    desc = "secret_starting_events.4.desc"
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = ICE
+
+        NOT = {
+            has_country_modifier = "secret_iceland_modifiers"
+        }
+    }
+
+    option = {
+        name = "secret_starting_events.4.a"
+        add_country_modifier = {
+            name = "secret_iceland_modifiers"
+            desc = "desc_secret_iceland_modifiers"
+            duration = -1
+        }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+}
+
+
+#TODO: Add events for 100% aggressive expansion impact after year 1600

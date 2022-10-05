@@ -1,0 +1,80 @@
+increased_missionary_presence = {
+	missionaries = 2
+	global_missionary_strength = 0.01
+}
+birthplace_of_the_reformation = {
+	global_missionary_strength = 0.005
+}
+secret_increased_aggressive_expansion_phase_one_hard = {
+	ae_impact = 0.5
+	development_cost_modifier = -0.25
+}
+secret_increased_aggressive_expansion_phase_one_medium = {
+	ae_impact = 0.35
+	trade_efficiency = 0.15
+	merchants = 1
+	center_of_trade_upgrade_cost = -0.25
+}
+secret_reduced_governing_capacity = {
+	governing_capacity_modifier = -0.75
+}
+secret_iceland_modifiers = {
+	ae_impact = 1
+	development_cost_modifier = -0.75
+}
+secret_iceland_colonial_path = {
+	colonists = 2
+	global_colonial_growth = 30
+	may_explore = yes
+	range = 0.3
+	land_morale = -0.2
+	naval_morale = 0.2
+	naval_forcelimit_modifier = 0.3
+	trade_range_modifier = 0.30
+	liberty_desire_from_subject_development = -0.25
+	reduced_liberty_desire = 25
+	monarch_diplomatic_power = 2
+	ae_impact = 0.75
+}
+secret_iceland_conquest_path = {
+	land_morale = 0.2
+	global_manpower_modifier = 0.2
+	infantry_cost = 0.2
+	cavalry_cost = 0.2
+	naval_morale = 0.1
+	naval_forcelimit_modifier = 0.1
+	global_ship_cost = 0.2
+	range = -0.75
+	monarch_military_power = 1
+	ae_impact = 0.5
+}
+secret_iceland_tall_path = {
+	fort_maintenance_modifier = -0.5
+	monarch_admin_power = 1
+	monarch_diplomatic_power = 1
+	monarch_military_power = 1
+	fabricate_claims_cost = 0.2
+	merchants = 1
+	diplomats = 1
+	range = -0.5
+	trade_range_modifier = 0.5
+	global_trade_power = 0.15
+	global_institution_spread = 0.5
+	development_cost_modifier = -0.35
+	ae_impact = 0.65
+}
+
+volcanic_iron_mines = {
+	trade_goods_size = 3
+	local_development_cost = -0.25
+	province_trade_power_modifier = 0.25
+}
+
+preparations_for_independence = {
+	global_manpower_modifier = 0.75
+	manpower_recovery_speed = 0.5
+	land_morale = 0.2
+	land_forcelimit_modifier = 0.25
+	infantry_cost = -0.3
+	cavalry_cost = -0.3
+}

@@ -1,0 +1,95 @@
+namespace = secret_religious_events
+
+country_event = {
+	id = secret_religious_events.1
+	title = "secret_religious_events.1.t"
+	desc = "secret_religious_events.1.desc"
+	picture = protestant_RELIGIOUS_CONVERSION_eventPicture
+
+	major = yes
+
+	option = { #We must embrace this new religion
+	ai_chance = {
+		factor = 100
+	}
+		name = "secret_religious_events.1.a"
+		random_owned_province = {
+			add_reform_center = protestant
+			change_religion = protestant
+			enable_religion = protestant
+		}
+		change_religion = protestant
+		set_ruler_religion = protestant
+		set_heir_religion = protestant
+		add_country_modifier = {
+			name = "increased_missionary_presence"
+			duration = 1825
+		}
+		add_country_modifier = {
+			name = "birthplace_of_the_reformation"
+			duration = -1
+		}
+	}
+
+	trigger = {
+		OR = {
+			tag = BRU
+			tag = BOH
+			tag = FRI
+		}
+
+		NOT = {
+			has_country_modifier = "birthplace_of_the_reformation"
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+}
+
+country_event = {
+	id = secret_religious_events.2
+	title = "secret_religious_events.2.t"
+	desc = "secret_religious_events.2.desc"
+	picture = protestant_RELIGIOUS_CONVERSION_eventPicture
+
+	major = yes
+
+	option = { #The reformed faith is the way
+		ai_chance = {
+			factor = 100
+		}
+
+		name = "secret_religious_events.2.a"
+
+		random_owned_province = {
+			add_reform_center = reformed
+			change_religion = reformed
+			enable_religion = reformed
+		}
+
+		add_country_modifier = {
+			name = "increased_missionary_presence"
+			duration = 1825
+		}
+		add_country_modifier = {
+			name = "birthplace_of_the_reformation"
+			duration = -1
+		}
+	}
+	trigger = {
+		OR = {
+			tag = CLI
+			tag = SWI
+			tag = UBV
+		}
+
+		NOT = {
+			has_country_modifier = "birthplace_of_the_reformation"
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+}

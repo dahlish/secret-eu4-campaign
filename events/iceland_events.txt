@@ -1,0 +1,144 @@
+namespace = secret_iceland_events
+
+country_event = {
+	id = secret_iceland_events.1
+	title = "secret_iceland.events.1.t"
+	desc = "secret_iceland.events.1.desc"
+	fire_only_once = yes
+
+	trigger = {
+		tag = ICE
+		all_owned_province = {
+			base_tax = 7
+			base_manpower = 7
+			base_production = 7
+		}
+		NOT = {
+			OR = {
+				has_country_modifier = "secret_iceland_colonial_path"
+				has_country_modifier = "secret_iceland_conquest_path"
+				has_country_modifier = "secret_iceland_tall_path"
+			}
+		}
+	}
+
+	option = {
+		name = "secret_iceland_events.1.a" #We should focus on exploring the world our ancestors always spoke of. (Colonial)
+		add_country_modifier = {
+			name = "secret_iceland_colonial_path"
+			duration = -1
+		}
+		remove_country_modifier = "secret_iceland_modifiers"
+	}
+	option = {
+		name = "secret_iceland_events.1.b" #We should focus on improving Icelandic identity. (Tall)
+		add_country_modifier = {
+			name = "secret_iceland_tall_path"
+			duration = -1
+		}
+		
+		370 = {
+			center_of_trade = 1
+		}
+		371 = {
+			add_center_of_trade_level = 1
+		}
+
+		remove_country_modifier = "secret_iceland_modifiers"
+	}
+	option = {
+		name = "secret_iceland_events.1.c" #We shall unite our ancestors to one large nation. (Conquest)
+		add_country_modifier = {
+			name = "secret_iceland_conquest_path"
+			duration = -1
+		}
+		add_permanent_claim = 1979
+		add_permanent_claim = 1978
+		add_permanent_claim = 23
+		add_permanent_claim = 24
+		add_permanent_claim = 2752
+		add_permanent_claim = 20
+		add_permanent_claim = 21
+
+		remove_country_modifier = "secret_iceland_modifiers"
+	}
+}
+
+#The trade for Iceland
+country_event = {
+	id = secret_iceland_events.2
+	title = "secret_iceland_events.2.t"
+	desc = "secret_iceland_events.2.desc"
+
+	fire_only_once = yes
+
+	trigger = {
+		is_subject = no
+		is_year = 1450
+	}
+
+	option = { #We should make this trade.
+		NOR = {
+			add_liberty_desire = 75
+		}
+		
+		DAN = {
+			create_subject = {
+				subject_type = march
+				subject = ICE
+			}
+
+			1979 = {
+				cede_province = ICE
+			}
+			1978 = {
+				cede_province = ICE
+			}
+			23 = {
+				cede_province = ICE
+			}
+			24 = {
+				cede_province = ICE
+			}
+			2752 = {
+				cede_province = ICE
+			}
+			20 = {
+				cede_province = ICE
+			}
+			21 = {
+				cede_province = ICE
+			}
+		}
+
+		change_religion = catholic
+		370 = {
+			change_religion = catholic
+		}
+		371 = {
+			change_religion = catholic
+		}
+	}
+	option = { #We will never be slaves.
+		add_historical_rival = DAN
+		DAN = {
+			add_historical_rival = ICE
+		}
+		NOR = {
+			add_liberty_desire = 75
+			add_opinion = {
+				who = ICE
+				modifier = iceland_norway_friends
+			}
+		add_historical_friend = ICE
+		remove_historical_friend = DAN
+		}
+		add_opinion = {
+			who = NOR
+			modifier = iceland_norway_friends
+		}
+		add_historical_friend = ICE
+		remove_historical_friend = DAN
+	}
+
+}
