@@ -114,13 +114,13 @@ first_steps = {
 				add_years_of_income = 2
 	}
 }
-naval_basics = {
+build_infrastructure = {
 		icon = mission_norwegian_ship
 		position = 2
 		required_missions = {first_steps}
 		trigger = { 
 			all_owned_province = { 
-						has_building = shipyard
+						has_building = marketplace
 						}
 			}
 		effect = {
