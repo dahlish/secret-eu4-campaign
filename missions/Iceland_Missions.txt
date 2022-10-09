@@ -1,3 +1,4 @@
+#test
 tradition = {
 	slot = 1
 	generic = no
