@@ -1,3 +1,13 @@
 iceland_norway_friends = {
 	opinion = 200
 }
+
+secret_greatly_increased_opinion = {
+	opinion = 100
+}
+secret_increased_opinion = {
+	opinion = 50
+}
+secret_reduced_opinion = {
+	opinion = -50
+}

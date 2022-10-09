@@ -179,3 +179,71 @@ country_event = {
 	}
 
 }
+
+country_event = {
+	id = secret_iceland_events.3
+	title = "secret_iceland_events.3.t"
+	desc = "secret_iceland_events.3.desc"
+	
+	trigger = {
+		tag = ICE
+		is_year = 1475
+
+		NOT = {
+			has_country_modifier = "secret_reduced_fish_yield"
+		}
+
+		370 = {
+			trade_goods = fish
+		}
+	}
+
+	option = { #Dark times are ahead.
+		name = "secret_iceland_events.3.a"
+		370 = {
+			add_province_modifier = {
+				name = "secret_reduced_fish_yield"
+				duration = 3650
+			}
+		}
+	}
+	option = { #Invest in importing foreign goods
+		name = "secret_iceland_events.3.b"
+
+		add_years_of_income = -5
+
+		370 = {
+			add_province_modifier = {
+				name = "secret_investing_in_foreign_goods"
+				duration = 3650
+			}
+		}
+		
+	}
+	option = { #We need to find another source of food.
+		name = "secret_iceland_events.3.c"
+		trigger = {
+			370 = {
+				base_production = 10
+				base_tax = 6
+				base_manpower = 6
+			}
+		}
+
+		370 = {
+			add_base_production = -7
+			add_base_tax = -3
+			add_base_manpower = -3
+			change_trade_goods = livestock
+			add_province_modifier = {
+				name = "secret_investing_in_livestock"
+				duration = 1825
+			}
+			remove_province_modifier = "icelanding_fisher_sea"
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+}

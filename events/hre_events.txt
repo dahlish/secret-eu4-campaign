@@ -15,6 +15,11 @@ country_event = {
             tag = CLI
 			tag = SWI
             tag = UBV
+			was_tag = BRU
+			was_tag = FRI
+			was_tag = CLI
+			was_tag = SWI
+			was_tag = UBV
 		}
 		is_emperor = yes
 	}
@@ -36,14 +41,16 @@ country_event = {
 			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
 		}	
 
-		add_prestige = -30
+		add_prestige = -50
 		add_adm_power = -100
 		add_dip_power = -100
+
+		
 	}
 
 	option = { #Keep the law
 		name = "secret_hre_events.1.b"
-		add_prestige = 30
+		add_prestige = 50
 		add_adm_power = 100
 		add_dip_power = 100
 	}
@@ -68,6 +75,11 @@ country_event = {
             tag = CLI
 			tag = SWI
             tag = UBV
+			was_tag = BRU
+			was_tag = FRI
+			was_tag = CLI
+			was_tag = SWI
+			was_tag = UBV
 		}
 		is_elector = no
 		exists = BRA
@@ -76,6 +88,9 @@ country_event = {
 
 	option = { #We will be the new electors.
 		name = "secret_hre_events.2.a"
+		ai_chance = {
+			factor = 0
+		}
 		BRA = {
 			elector = no
 		}
@@ -114,7 +129,7 @@ country_event = {
 
 	option = { #It is already too late.
 		ai_chance = {
-			factor = 75
+			factor = 90
 		}
 		name = "secret_hre_events.3.a"
 		event_target:gets_vassal_event_target = {
@@ -127,7 +142,7 @@ country_event = {
 	}
 	option = { #We cannot let this happen!
 		ai_chance = {
-			factor = 25
+			factor = 10
 		}
 		name = "secret_hre_events.3.b"
 
@@ -139,5 +154,293 @@ country_event = {
 		}
 		add_mil_power = 100
 		add_prestige = 25
+	}
+}
+
+country_event = {
+	id = secret_hre_events.4
+	title = "secret_hre_events.4.t"
+	desc = "secret_hre_events.4.desc"
+
+	major = yes
+	fire_only_once = yes
+
+	immediate = {
+		save_event_target_as = rallies_protestant_league_target
+	}
+
+	trigger = {
+		OR = {
+			tag = BRU
+			tag = FRI
+			tag = CLI
+			tag = SWI
+			tag = UBV
+			was_tag = BRU
+			was_tag = FRI
+			was_tag = CLI
+			was_tag = SWI
+			was_tag = UBV
+		}
+
+		OR = {
+			any_elector = {
+				is_subject_of = THIS
+			}
+			is_elector = yes
+		}
+
+		religion = protestant
+		is_year = 1455
+	}
+
+	option = { #The Empire needs to be modernised.
+		name = "secret_hre_events.4.a"
+		enable_hre_leagues = yes
+		join_league = protestant
+
+		PAP = {
+			join_league = catholic
+		}
+		emperor = {
+			join_league = catholic
+		}
+		every_elector = {
+			limit = {
+				OR = {
+					religion = protestant
+					religion = reformed
+				}
+			}
+			join_league = protestant
+		}
+		every_elector = {
+			limit = {
+				religion = catholic
+			}
+			join_league = catholic
+		}
+
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+				NOT = {
+					OR = {
+						tag = RIG
+						tag = GOT
+					}
+				}
+			}
+
+			country_event = {
+				id = secret_hre_events.5
+				days = 30
+			}
+			country_event = {
+				id = secret_hre_events.6
+				days = 365
+			}
+		}
+
+		SWE = {
+			country_event = {
+				id = secret_hre_events.7
+				days = 30
+			}
+		}
+		POL = {
+			country_event = {
+				id = secret_hre_events.7
+				days = 30
+			}
+		}
+		RIG = {
+			country_event = {
+				id = secret_hre_events.7
+				days = 30
+			}
+		}
+		ICE = {
+			country_event = {
+				id = secret_hre_events.7
+				days = 30
+			}
+		}
+		GOT = {
+			country_event = {
+				id = secret_hre_events.7
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = {
+	id = secret_hre_events.5
+	title = "secret_hre_events.5.t"
+	desc = "secret_hre_events.5.desc"
+
+	is_triggered_only = yes
+
+	option = { #We stand with [nation]
+		name = "secret_hre_events.5.a" 
+		ai_chance = {
+			factor = 90
+		}
+		trigger = {
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		join_league = protestant
+	}
+	option = { #We stand with the emperor!
+		name = "secret_hre_events.5.b" 
+		ai_chance = {
+			factor = 90
+		}
+		trigger = {
+			religion = catholic
+		}
+		join_league = catholic
+	}
+	option = { #We stay out of this.
+		name = "secret_hre_events.5.c" 
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = -75
+		add_legitimacy = -75
+	}
+}
+
+country_event = {
+	id = secret_hre_events.6
+	title = "secret_hre_events.6.t"
+	desc = "secret_hre_events.6.desc"
+
+	is_triggered_only = yes
+
+	option = { # Together we shall prevail!
+		name = "secret_hre_events.6.a" 
+		join_league = protestant
+		declare_war_with_cb = {
+			who = emperor
+			casus_belli = cb_religious_league
+		}
+	}
+}
+country_event = { # [Nation] seeks aid in war for the empire.
+	id = secret_hre_events.7
+	title = "secret_hre_events.7.t"
+	desc = "secret_hre_events.7.desc"
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = sends_aid_target
+	}
+
+	option = { # We march with [Nation]!
+		ai_chance = {
+			factor = 40
+		}
+		name = "secret_hre_events.7.a" 
+		join_league = protestant
+		add_prestige = 25
+	}
+	option = { # We will offer them aid in other ways.
+		ai_chance = {
+			factor = 40
+		}
+		name = "secret_hre_events.7.b" 
+		add_prestige = 15
+		add_yearly_manpower = -3
+		add_years_of_income = -3
+
+		every_country = {
+			limit = {
+				in_league = protestant
+			}
+
+			country_event = {
+				id = secret_hre_events.8
+				days = 14
+			}
+		}
+
+	}
+	option = { # We take no interest in politics of the Empire.
+		ai_chance = {
+			factor = 20
+		}
+		name = "secret_hre_events.7.c" 
+		add_prestige = -25
+		add_country_modifier = {
+			name = "secret_political_absence"
+			duration = 1825
+		}
+		add_opinion = {
+			who = event_target:rallies_protestant_league_target
+			modifier = secret_reduced_opinion
+		}
+
+		every_country = {
+			limit = {
+				in_league = protestant
+			}
+
+			country_event = {
+				id = secret_hre_events.9
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { #[Nation] sends aid to our cause!
+	id = secret_hre_events.8
+	title = "secret_hre_events.8.t"
+	desc = "secret_hre_events.8.desc"
+	is_triggered_only = yes
+
+	option = { #God bless them.
+		name = "secret_hre_events.8.a" 
+		add_yearly_manpower = 2
+		add_years_of_income = 2
+		add_opinion = {
+			who = event_target:sends_aid_target
+			modifier = secret_increased_opinion
+		}
+	}
+}
+
+country_event = { #[Nation] refuses aid to our cause!
+	id = secret_hre_events.9
+	title = "secret_hre_events.9.t"
+	desc = "secret_hre_events.9.desc"
+	is_triggered_only = yes
+
+	option = { # We will not forget this.
+		name = "secret_hre_events.9.a" 
+		add_casus_belli = {
+			type = cb_insult
+			target = event_target:sends_aid_target
+		}
+	}
+}
+
+country_event = { #[Nation] joins our cause!
+	id = secret_hre_events.10
+	title = "secret_hre_events.10.t"
+	desc = "secret_hre_events.10.desc"
+	is_triggered_only = yes
+
+	option = { # We are thankful for their decision.
+		name = "secret_hre_events.10.a" 
+		add_opinion = {
+			who = event_target:sends_aid_target
+			modifier = secret_greatly_increased_opinion
+		}
 	}
 }

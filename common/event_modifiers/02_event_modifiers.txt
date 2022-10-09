@@ -86,3 +86,25 @@ never_slaves = {
 	prestige = 1
 	global_unrest = -2
 }
+
+secret_reduced_fish_yield = {
+	local_production_efficiency = -0.25
+	trade_efficiency = -0.2
+	global_unrest = 5
+}
+secret_investing_in_livestock = {
+	local_development_cost = -0.6
+	global_unrest = 2
+	local_production_efficiency = 0.2
+}
+secret_investing_in_foreign_goods = {
+	global_unrest = -1
+	local_development_cost = 0.3
+	trade_efficiency = 0.2
+	global_tax_modifier = -0.1
+}
+secret_political_absence = {
+	diplomatic_reputation = -2
+	diplomats = -1
+	prestige = -1
+}
