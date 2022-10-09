@@ -184,8 +184,8 @@ country_event = {
 		}
 
 		OR = {
-			any_elector = {
-				is_subject_of = THIS
+			any_subject_country = {
+				is_elector = yes
 			}
 			is_elector = yes
 		}
@@ -236,40 +236,41 @@ country_event = {
 				id = secret_hre_events.5
 				days = 30
 			}
-			country_event = {
-				id = secret_hre_events.6
-				days = 365
-			}
+		}
+
+		country_event = {
+			id = secret_hre_events.6
+			days = 365
 		}
 
 		SWE = {
 			country_event = {
 				id = secret_hre_events.7
-				days = 30
+				days = 60
 			}
 		}
 		POL = {
 			country_event = {
 				id = secret_hre_events.7
-				days = 30
+				days = 60
 			}
 		}
 		RIG = {
 			country_event = {
 				id = secret_hre_events.7
-				days = 30
+				days = 60
 			}
 		}
 		ICE = {
 			country_event = {
 				id = secret_hre_events.7
-				days = 30
+				days = 60
 			}
 		}
 		GOT = {
 			country_event = {
 				id = secret_hre_events.7
-				days = 30
+				days = 60
 			}
 		}
 	}
@@ -361,6 +362,7 @@ country_event = { # [Nation] seeks aid in war for the empire.
 		every_country = {
 			limit = {
 				in_league = protestant
+				is_part_of_hre = yes
 			}
 
 			country_event = {
@@ -388,6 +390,7 @@ country_event = { # [Nation] seeks aid in war for the empire.
 		every_country = {
 			limit = {
 				in_league = protestant
+				is_part_of_hre = yes
 			}
 
 			country_event = {
