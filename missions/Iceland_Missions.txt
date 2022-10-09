@@ -198,7 +198,6 @@ a_path_to_choose = {
 					}
 			}
 }			
-}
 tall = {
 		icon = mission_invade_island
 		position = 5
