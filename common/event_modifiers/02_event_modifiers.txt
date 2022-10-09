@@ -6,21 +6,21 @@ birthplace_of_the_reformation = {
 	global_missionary_strength = 0.005
 }
 secret_increased_aggressive_expansion_phase_one_hard = {
-	ae_impact = 0.5
+	ae_impact = 1
 	development_cost_modifier = -0.25
 }
 secret_increased_aggressive_expansion_phase_one_medium = {
-	ae_impact = 0.35
+	ae_impact = 0.7
 	trade_efficiency = 0.15
 	merchants = 1
 	center_of_trade_upgrade_cost = -0.25
 }
 secret_reduced_governing_capacity = {
 	governing_capacity_modifier = -0.75
-	ae_impact = 0.35
+	ae_impact = 0.7
 }
 secret_iceland_modifiers = {
-	ae_impact = 1
+	ae_impact = 1.5
 	development_cost_modifier = -0.75
 }
 secret_iceland_colonial_path = {
@@ -38,7 +38,7 @@ secret_iceland_colonial_path = {
 	ae_impact = 0.75
 }
 secret_iceland_conquest_path = {
-	land_morale = 0.2
+	land_morale = 0.1
 	global_manpower_modifier = 0.2
 	infantry_cost = 0.2
 	cavalry_cost = 0.2

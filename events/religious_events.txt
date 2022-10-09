@@ -42,9 +42,6 @@ country_event = {
 			has_country_modifier = "birthplace_of_the_reformation"
 		}
 	}
-	mean_time_to_happen = {
-		months = 12
-	}
 }
 
 country_event = {
@@ -87,9 +84,5 @@ country_event = {
 		NOT = {
 			has_country_modifier = "birthplace_of_the_reformation"
 		}
-	}
-
-	mean_time_to_happen = {
-		months = 12
 	}
 }

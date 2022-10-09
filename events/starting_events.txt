@@ -42,6 +42,10 @@ country_event = {
             tag = GOT
             tag = RIG
         }
+
+        NOT = {
+            has_country_modifier = "secret_increased_aggressive_expansion_phase_one_medium"
+        }
     }
 
     option = {

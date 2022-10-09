@@ -41,14 +41,14 @@ tradition = {
 					NOT = { is_permanent_claim = ROOT }
 			}
 			add_permanent_claim = ROOT
-			
+		}
 			highlands_area = {
 			     limit = {
 			                NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
 			}
 			add_permanent_claim = ROOT
-			
+		}
 			kingdom_of_the_isles_area = {
 			     limit = {
 			                NOT = { is_core = ROOT }
@@ -56,6 +56,7 @@ tradition = {
 			}
 			add_permanent_claim = ROOT
 		}
+	}
 	}
 	spread_norse = {
 		icon = mission_luther_theses
@@ -70,14 +71,6 @@ tradition = {
 			370 = {
 			          add_reform_center = norse
 			}
-			hidden_effect = {
-								370 = {
-									province_event = {
-										id = flavor_boh.13
-										days = 36500
-									}
-								}
-							}
 			missionaries = 1
 		}
 	}
@@ -90,7 +83,7 @@ tradition = {
 			religion = norse
 		}
 		effect = {
-			
+			add_prestige = 30
  }
 	}
 }
@@ -100,7 +93,7 @@ future = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = ICE
+		always = yes
 	}
 first_steps = {
 		icon = mission_norwegian_ship
@@ -109,11 +102,11 @@ first_steps = {
 		trigger = { 
 				370 = { 
 					owned_by = ROOT
-					development = 25
+					development = 21
 					}
 				371 = {
 					owned_by = ROOT
-					development = 25
+					development = 21
 					}
 			}
 		effect = {
@@ -147,6 +140,7 @@ establishment_of_a_fleet = {
 					tradition = 50
 				}
 			}
+		}
 an_option = {
 		icon = mission_rb_scottish_north_sea_trade
 		position = 4
@@ -234,6 +228,7 @@ tall = {
 				global_manpower_modifier = 0.15
 				production_efficiency = 0.15
 			}
+		}
 expansion = {
 		icon = mission_invade_island
 		position = 6
@@ -246,13 +241,14 @@ expansion = {
 			governing_capacity_modifier = 0.15
 	}			
 }
+}
 
 generic = {
 	slot = 5
 	generic = no
 	ai = yes
 	potential = {
-		tag = ICE
+		always = yes
 	}
 
 	home_trade_node = {
@@ -336,7 +332,7 @@ economy = {
 	generic = no
 	ai = yes
 	potential = {
-		tag = ICE
+		always = yes
 	}
 fifty_cents = {
 		icon = mission_alliances
@@ -351,6 +347,8 @@ fifty_cents = {
 				name = "growing_economy"
 				duration = 9125
 			}
+		}
+	}
 gather_ducats = { 
 		icon = mission_alliances
 		position = 2
@@ -362,21 +360,15 @@ gather_ducats = {
 			taxation_modifier = 0.10
 			}	
 }
-#chuu_chuu = {
-		#icon = mission_alliances
-		#position = 3
-		#required_missions = {gather_ducats}
-		#trigger = {
-			
-			#}	
-#}
+
+}
 
 greater_goals = {
 	slot = 4
 	generic = no
 	ai = yes
 	potential = {
-		tag = ICE
+		always = yes
 	}
 
 }
