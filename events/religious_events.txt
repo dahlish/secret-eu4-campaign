@@ -13,14 +13,12 @@ country_event = {
 		factor = 100
 	}
 		name = "secret_religious_events.1.a"
-		random_owned_province = {
+		capital_scope = {
 			add_reform_center = protestant
 			change_religion = protestant
 			enable_religion = protestant
 		}
 		change_religion = protestant
-		set_ruler_religion = protestant
-		set_heir_religion = protestant
 		add_country_modifier = {
 			name = "increased_missionary_presence"
 			duration = 1825
@@ -59,11 +57,13 @@ country_event = {
 
 		name = "secret_religious_events.2.a"
 
-		random_owned_province = {
+		capital_scope = {
 			add_reform_center = reformed
 			change_religion = reformed
 			enable_religion = reformed
 		}
+
+		change_religion = reformed
 
 		add_country_modifier = {
 			name = "increased_missionary_presence"
