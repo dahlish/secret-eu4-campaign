@@ -112,6 +112,4 @@ country_event = {
         days = 1
     }
 }
-
-
 #TODO: Add events for 100% aggressive expansion impact after year 1600

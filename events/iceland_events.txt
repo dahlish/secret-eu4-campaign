@@ -230,3 +230,155 @@ country_event = {
 		months = 600
 	}
 }
+
+country_event = { # Massive emigration to Iceland
+	id = secret_iceland_events.4
+	title = "secret_iceland_events.4.t"
+	desc = "secret_iceland_events.4.desc"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRI
+		is_year = 1550
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				base_tax = 6
+				base_production = 6
+				base_manpower = 6
+			}
+			save_event_target_as = province_to_emigrate_target
+		}
+	}
+	option = { # The people are free to do as they desire.
+		name = "secret_iceland_events.4.a"
+
+		event_target:province_to_emigrate_target = {
+			add_base_tax = -4
+			add_base_production = -4
+			add_base_manpower = -5
+
+			ICE = {
+				country_event = {
+					id = secret_iceland_events.5
+					days = 14
+				}
+			}
+		}
+	}
+	option = { # Force them to stay
+		name = "secret_iceland_events.4.b"
+
+		trigger = {
+			OR = {
+				ruler_has_personality = malevolent_personality
+				ruler_has_personality = strict_personality
+				ruler_has_personality = cruel_personality
+			}
+		}
+
+		event_target:province_to_emigrate_target = {
+			add_province_modifier = {
+				name = secret_angry_population
+				duration = 1825
+			}
+
+			random_list = {
+				65 = {
+					spawn_rebels = {
+						size = 3
+						type = leadered_peasant_rebels
+					}
+				}
+				35 = {
+					spawn_rebels = {
+						size = 5
+						type = leadered_peasant_rebels
+					}
+				}
+			}
+		}
+
+	}
+	option = { # Try to make them stay.
+		name = "secret_iceland_events.4.c"
+
+		add_years_of_income = -5
+
+		random_list = {
+			50 = {
+				event_target:province_to_emigrate_target = {
+					add_base_tax = -2
+					add_base_production = -3
+					add_base_manpower = -3
+				}
+				ICE = {
+					country_event = {
+						id = secret_iceland_events.6
+						days = 14
+					}
+				}
+			}
+			50 = {
+				event_target:province_to_emigrate_target = {
+					add_province_modifier = {
+						name = secret_motivated_population
+						duration = 1825
+					}
+				}
+			}
+		}
+
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+}
+
+country_event = { #Immigrants from Friesland
+	id = secret_iceland_events.5
+	title = "secret_iceland_events.5.t"
+	desc = "secret_iceland_events.5.desc"
+
+	is_triggered_only = yes
+
+	option = { # They are most welcome.
+		name = "secret_iceland_events.5.a"
+		
+		random_owned_province = {
+			limit = {
+				is_overseas = no
+			}
+
+			add_base_tax = 4
+			add_base_production = 4
+			add_base_manpower = 5
+		}
+	}
+}
+
+country_event = {
+	id = secret_iceland_events.6
+	title = "secret_iceland_events.6.t"
+	desc = "secret_iceland_events.6.desc"
+
+	is_triggered_only = yes
+
+	option = { # They are most welcome!
+		name = "secret_iceland_events.6.a"
+
+		random_owned_province = {
+			limit = {
+				is_overseas = no
+			}
+
+			add_base_tax = 2
+			add_base_production = 3
+			add_base_manpower = 3
+		}
+	}
+}

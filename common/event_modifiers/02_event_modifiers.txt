@@ -108,3 +108,13 @@ secret_political_absence = {
 	diplomats = -1
 	prestige = -1
 }
+secret_motivated_population = {
+	local_production_efficiency = 0.15
+	local_development_cost_modifier = -0.15
+}
+secret_angry_population = {
+	local_unrest = 10
+	local_production_efficiency = -1
+	local_tax_modifier = -0.5
+	province_trade_power_modifier = -0.5
+}
