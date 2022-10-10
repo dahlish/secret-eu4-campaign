@@ -1,0 +1,41 @@
+country_decisions = {
+	invite_sweden_to_baltic_agreement = {
+		major = yes
+		potential = {
+			has_country_flag = "can_invite_sweden_to_baltic_agreement"
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				has_country_modifier = "secret_breaking_baltic_agreement"
+			}
+		}
+		effect = {
+			set_country_flag = "has_invited_sweden_to_baltic_agreement"
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	revoke_invitation_to_baltic_agreement = {
+		major = yes
+		potential = {
+			has_country_flag = "has_invited_sweden_to_baltic_agreement"
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				has_country_modifier = "secret_breaking_baltic_agreement"
+			}
+			dip_power = 100
+		}
+		effect = {
+			clr_country_flag = "has_invited_sweden_to_baltic_agreement"
+			add_dip_power = -100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

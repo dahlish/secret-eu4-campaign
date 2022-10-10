@@ -118,3 +118,9 @@ secret_angry_population = {
 	local_tax_modifier = -0.5
 	province_trade_power_modifier = -0.5
 }
+secret_breaking_baltic_agreement = {
+	ae_impact = 0.5
+	trade_efficiency = -0.25
+	merchants = -1
+	center_of_trade_upgrade_cost = 0.5
+}

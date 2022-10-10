@@ -9,43 +9,22 @@ country_event = {
 	major = yes
 
 	trigger = {
-		OR = {
-			tag = BRU
-			tag = FRI
-            tag = CLI
-			tag = SWI
-            tag = UBV
-			was_tag = BRU
-			was_tag = FRI
-			was_tag = CLI
-			was_tag = SWI
-			was_tag = UBV
-		}
+		has_country_flag = "secret_hre_players"
 		is_emperor = yes
 	}
 	option = { #Abolish the law
 		name = "secret_hre_events.1.a"
-		BRU = {
+
+		every_country = {
+			limit = {
+				has_country_flag = "secret_hre_players"
+			}
 			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
 		}
-		FRI = {
-			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
-		}
-		CLI = {
-			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
-		}
-		SWI = {
-			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
-		}
-		UBV = {
-			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
-		}	
 
 		add_prestige = -50
 		add_adm_power = -100
-		add_dip_power = -100
-
-		
+		add_dip_power = -100		
 	}
 
 	option = { #Keep the law
@@ -69,18 +48,7 @@ country_event = {
 	}
 	
 	trigger = {
-		OR = {
-			tag = BRU
-			tag = FRI
-            tag = CLI
-			tag = SWI
-            tag = UBV
-			was_tag = BRU
-			was_tag = FRI
-			was_tag = CLI
-			was_tag = SWI
-			was_tag = UBV
-		}
+		has_country_flag = "secret_hre_players"
 		is_elector = no
 		exists = BRA
 		is_year = 1450
@@ -170,19 +138,7 @@ country_event = {
 	}
 
 	trigger = {
-		OR = {
-			tag = BRU
-			tag = FRI
-			tag = CLI
-			tag = SWI
-			tag = UBV
-			was_tag = BRU
-			was_tag = FRI
-			was_tag = CLI
-			was_tag = SWI
-			was_tag = UBV
-		}
-
+		has_country_flag = "secret_hre_players"
 		OR = {
 			any_subject_country = {
 				is_elector = yes
@@ -243,36 +199,20 @@ country_event = {
 			days = 365
 		}
 
-		SWE = {
+		every_country = {
+			limit = {
+				OR = {
+					has_country_flag = "secret_baltic_players"
+					has_country_flag = "secret_iceland_players"
+				}
+			}
+
 			country_event = {
 				id = secret_hre_events.7
 				days = 60
 			}
 		}
-		POL = {
-			country_event = {
-				id = secret_hre_events.7
-				days = 60
-			}
-		}
-		RIG = {
-			country_event = {
-				id = secret_hre_events.7
-				days = 60
-			}
-		}
-		ICE = {
-			country_event = {
-				id = secret_hre_events.7
-				days = 60
-			}
-		}
-		GOT = {
-			country_event = {
-				id = secret_hre_events.7
-				days = 60
-			}
-		}
+
 	}
 }
 

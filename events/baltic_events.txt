@@ -1,0 +1,75 @@
+namespace = secret_baltic_events
+
+country_event = { #Breaking the baltic agreement
+	id = secret_baltic_events.1
+	title = "secret_baltic_events.1.t"
+	desc = "secret_baltic_events.1.desc"
+
+	trigger = {
+		NOT ={
+			has_country_modifier = secret_breaking_baltic_agreement
+		}
+
+		has_country_flag = "has_baltic_agreement"
+		
+		any_war_enemy_country = {
+			has_country_flag = "has_baltic_agreement"
+		}
+		is_in_war = {
+			attackers = THIS
+		}
+
+	}
+	option = { # It's worth it.
+		name = "secret_baltic_events.1.a" 
+
+		add_country_modifier = {
+			name = secret_breaking_baltic_agreement
+			duration = 5475
+		}
+	}
+}
+
+country_event = { # Enables Invite Sweden to Baltic Agreement
+	id = secret_baltic_events.2
+	title = "secret_baltic_events.2.t"
+	desc = "secret_baltic_events.2.desc"
+
+	trigger = {
+		has_country_flag = "has_baltic_agreement"
+		is_year = 1550
+		NOT = {
+			has_country_flag = "has_invited_sweden_to_baltic_agreement"
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+
+	option = {
+		name = "secret_baltic_events.2.a"
+		set_country_flag = "can_invite_sweden_to_baltic_agreement"
+	}
+}
+
+country_event = { # Send Swedish invitation to Baltic Agreement
+	id = secret_baltic_events.3
+	title = "secret_baltic_events.3.t"
+	desc = "secret_baltic_events.3.desc"
+
+	trigger = {
+        tag = SWE
+        all_country = {
+            if = {
+                limit = {
+                    has_country_flag = "has_baltic_agreement"
+                }
+                has_country_flag = "has_invited_sweden_to_baltic_agreement"
+            }
+        }
+	}
+	option = {
+		name = "secret_baltic_events.3.a"
+	}
+}

@@ -289,7 +289,7 @@ country_event = { # Massive emigration to Iceland
 			random_list = {
 				65 = {
 					spawn_rebels = {
-						size = 3
+						size = 2
 						type = leadered_peasant_rebels
 					}
 				}
