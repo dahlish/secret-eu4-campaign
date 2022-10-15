@@ -124,3 +124,14 @@ secret_breaking_baltic_agreement = {
 	merchants = -1
 	center_of_trade_upgrade_cost = 0.5
 }
+strengthened_baltic_agreement = {
+	ae_impact = 0.5
+	trade_efficiency = 0.20
+	merchants = 1
+	center_of_trade_upgrade_cost = -0.35
+	dip_tech_cost_modifier = -0.1
+	naval_forcelimit_modifier = 0.2
+	light_ship_cost = -0.25
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}

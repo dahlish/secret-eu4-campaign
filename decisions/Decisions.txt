@@ -3,6 +3,21 @@ country_decisions = {
 		major = yes
 		potential = {
 			has_country_flag = "can_invite_sweden_to_baltic_agreement"
+
+			NOT = {
+				has_country_flag = "has_invited_sweden_to_baltic_agreement"
+			}
+
+			SWE = {
+				AND = {
+					NOT = {
+						has_country_flag = "rejected_baltic_agreement"
+					}
+					NOT = {
+						has_country_flag = "has_baltic_agreement"
+					}
+				}
+			}
 		}
 		allow = {
 			is_at_war = no
@@ -22,6 +37,17 @@ country_decisions = {
 		major = yes
 		potential = {
 			has_country_flag = "has_invited_sweden_to_baltic_agreement"
+
+			SWE = {
+				AND = {
+					NOT = {
+						has_country_flag = "rejected_baltic_agreement"
+					}
+					NOT = {
+						has_country_flag = "has_baltic_agreement"
+					}
+				}
+			}
 		}
 		allow = {
 			is_at_war = no

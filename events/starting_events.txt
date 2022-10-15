@@ -44,8 +44,13 @@ country_event = {
             tag = RIG
         }
 
-        NOT = {
-            has_country_modifier = "secret_increased_aggressive_expansion_phase_one_medium"
+        AND = {
+            NOT = {
+                has_country_modifier = "secret_increased_aggressive_expansion_phase_one_medium"
+            }
+            NOT = {
+                has_country_modifier = "strengthened_baltic_agreement"
+            }
         }
     }
 

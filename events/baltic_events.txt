@@ -38,13 +38,14 @@ country_event = { # Enables Invite Sweden to Baltic Agreement
 	trigger = {
 		has_country_flag = "has_baltic_agreement"
 		is_year = 1550
-		NOT = {
-			has_country_flag = "has_invited_sweden_to_baltic_agreement"
+		AND = {
+			NOT = {
+				has_country_flag = "has_invited_sweden_to_baltic_agreement"
+			}
+			NOT = {
+				has_country_flag = "can_invite_sweden_to_baltic_agreement"
+			}
 		}
-	}
-
-	mean_time_to_happen = {
-		months = 600
 	}
 
 	option = {
@@ -53,13 +54,17 @@ country_event = { # Enables Invite Sweden to Baltic Agreement
 	}
 }
 
-country_event = { # Send Swedish invitation to Baltic Agreement
+country_event = { # An invitation from the Baltic Trade League
 	id = secret_baltic_events.3
 	title = "secret_baltic_events.3.t"
 	desc = "secret_baltic_events.3.desc"
 
+	fire_only_once = yes
+
 	trigger = {
         tag = SWE
+		is_year = 1445
+		is_subject = no
         all_country = {
             if = {
                 limit = {
@@ -70,6 +75,77 @@ country_event = { # Send Swedish invitation to Baltic Agreement
         }
 	}
 	option = {
-		name = "secret_baltic_events.3.a"
+		name = "secret_baltic_events.3.a" #We will join this trade league.
+
+		every_country = {
+			limit = {
+				has_country_flag = "has_baltic_agreement"
+			}
+
+			country_event = {
+				id = secret_baltic_events.4
+			}
+		}
+
+		add_country_modifier = {
+			name = "strengthened_baltic_agreement"
+			duration = -1
+		}
+		set_country_flag = "has_baltic_agreement"
+		remove_country_modifier = "secret_reduced_governing_capacity"
+		
+	}
+
+	option = { # We will never join such a league.
+		name = "secret_baltic_events.3.b"
+		add_prestige = 100
+		set_country_flag = "rejected_baltic_agreement"
+		every_country = {
+			limit = {
+				has_country_flag = "has_baltic_agreement"
+			}
+
+			country_event = {
+				id = secret_baltic_events.5
+			}
+		}
+	}
+}
+
+country_event = { # Sweden joins the Baltic Agreement.
+	id = secret_baltic_events.4
+	title = "secret_baltic_events.4.t"
+	desc = "secret_baltic_events.4.desc"
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_medium"
+		add_country_modifier = {
+			name = "strengthened_baltic_agreement"
+			duration = -1
+		}
+	}
+
+	option = {
+		name = "secret_baltic_events.4.a" # Perfect.
+		add_prestige = 25
+	}
+}
+
+country_event = { # Sweden rejects the Baltic Agreement.
+	id = secret_baltic_events.5
+	title = "secret_baltic_events.5.t"
+	desc = "secret_baltic_events.5.desc"
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = "secret_baltic_events.5.a"
+		add_casus_belli = {
+			type = cb_insult
+			target = SWE
+		}
+		add_prestige = -50
 	}
 }
