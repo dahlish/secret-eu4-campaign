@@ -15,7 +15,6 @@ capital = "Reykjavik"
 is_city = yes
 discovered_by = western
 
-
 1536.1.1 = {
 	religion = protestant
 	owner = DAN

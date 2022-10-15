@@ -54,16 +54,17 @@ country_event = { # Enables Invite Sweden to Baltic Agreement
 	}
 }
 
-country_event = { # An invitation from the Baltic Trade League
+country_event = { # An invitation from the Baltic Trade League 
 	id = secret_baltic_events.3
 	title = "secret_baltic_events.3.t"
 	desc = "secret_baltic_events.3.desc"
 
 	fire_only_once = yes
-
+	major = yes
+	
 	trigger = {
         tag = SWE
-		is_year = 1445
+		is_year = 1550
 		is_subject = no
         all_country = {
             if = {
@@ -119,17 +120,14 @@ country_event = { # Sweden joins the Baltic Agreement.
 
 	is_triggered_only = yes
 
-	immediate = {
+	option = {
+		name = "secret_baltic_events.4.a" # Perfect.
+		add_prestige = 25
 		remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_medium"
 		add_country_modifier = {
 			name = "strengthened_baltic_agreement"
 			duration = -1
 		}
-	}
-
-	option = {
-		name = "secret_baltic_events.4.a" # Perfect.
-		add_prestige = 25
 	}
 }
 

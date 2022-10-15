@@ -51,7 +51,7 @@ country_event = {
 		has_country_flag = "secret_hre_players"
 		is_elector = no
 		exists = BRA
-		is_year = 1450
+		is_year = 1500
 	}
 
 	option = { #We will be the new electors.
