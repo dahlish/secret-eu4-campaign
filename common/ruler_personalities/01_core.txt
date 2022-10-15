@@ -1,0 +1,16 @@
+disfigured_personality = {
+	
+	allow = {
+	}
+	
+	chance = {
+		modifier = {
+			factor = -2
+		}
+	}
+	legitimacy = -1
+	global_unrest = -1
+	diplomatic_reputation = -2
+	nation_designer_cost = -20
+	static = yes # Makes nation_designer_cost not scale with age etc. 
+}

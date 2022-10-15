@@ -1,0 +1,89 @@
+smallpox_disaster = {
+	potential = {
+		is_year = 1444
+		any_owned_province = {
+			continent = europe
+			development = 18
+		}
+		NOT = {
+			has_country_flag = "had_smallpox_disaster"
+		}
+		#total_development = 200 Maybe only affect strong nations?
+	}
+	progress = {
+		modifier = {
+			factor = 5
+			calc_true_if = {
+				amount = 10
+				all_country = {
+					has_disaster_progress = {
+						disaster = smallpox_disaster
+						value = 50
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 1
+			any_owned_province = {
+				development = 18
+			}
+		}
+		modifier = {
+			factor = 1
+			num_of_merchants = 4
+		}
+		modifier = {
+			factor = 1
+			manpower_percentage = 0.5
+		}
+		modifier = {
+			factor = 1
+			any_owned_province = {
+				development = 30
+			}
+		}
+		modifier = {
+			factor = 1
+			any_owned_province = {
+				development = 25
+			}
+		}
+		modifier = {
+			factor = -1
+			NOT = {
+				manpower_percentage = 0.3
+			}
+		}
+	}
+	can_end = {
+		manpower = 0
+		all_owned_province = {
+			NOT = {
+				development = 18
+			}
+		}
+	}
+	can_stop = {
+		all_owned_province = {
+			NOT = {
+				development = 18
+			}
+		}
+	}
+	can_start = {
+		has_any_disaster = no
+		manpower_percentage = 0.5
+	}
+	modifier = {
+		global_unrest = 5
+		development_cost_modifier = 1
+		manpower_recovery_speed = -0.75
+		global_trade_power = -0.5
+		trade_efficiency = -0.35
+		global_supply_limit_modifier = -0.5
+	}
+	on_start = secret_smallpox_events.6
+	on_end = secret_smallpox_events.7
+}

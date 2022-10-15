@@ -1,0 +1,8 @@
+spriteTypes = {
+ spriteType = {
+  name = "GFX_disaster_smallpox_disaster"
+  texturefile = "gfx//interface//disasters//munster_anabaptist_rebellion.dds"
+  noOfFrames = 3
+  loadType = "INGAME"
+ }
+}

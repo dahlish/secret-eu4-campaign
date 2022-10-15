@@ -1,0 +1,350 @@
+namespace = secret_smallpox_events
+
+country_event = { # New deaths in [Get.Name]
+	id = secret_smallpox_events.1
+	title = "secret_smallpox_events.1.t"
+	desc = "secret_smallpox_events.1.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+		any_owned_province = {
+			development = 19
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				base_tax = 5
+				base_manpower = 5
+				base_production = 5
+			}
+			save_event_target_as = smallpox_province_target
+		}
+	}
+	option = { # What god would ever put anyone through this misery?
+		name = "secret_smallpox_events.1.a"
+
+		event_target:smallpox_province_target = { ##TODO: Fix so that it gives penalties depending on which dev is the highest to prevent bugs.
+			random_list = {
+				50 = {
+					add_base_tax = -1
+					add_base_manpower = -1
+					add_base_production = -2
+				}
+				25 = {
+					add_base_tax = -3
+					add_base_manpower = -2
+					add_base_production = -2
+				}
+				25 = {
+					add_base_tax = -3
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+}
+
+country_event = { # Subsidies for failing businesses
+	id = secret_smallpox_events.2
+	title = "secret_smallpox_events.2.t"
+	desc = "secret_smallpox_events.2.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+		any_owned_province = {
+			development = 18
+		}
+	}
+	option = {
+		name = "secret_smallpox_events.2.a" # Now is the time to show what true leadership is.
+		add_years_of_income = -1
+		random_owned_province = {
+			limit = {
+				development = 18
+			}
+
+			add_base_tax = -2
+			add_base_production = 1
+		}
+	}
+	mean_time_to_happen = {
+		years = 1
+	}
+}
+
+country_event = { # Outlaws takes advantage of the pox
+	id = secret_smallpox_events.3
+	title = "secret_smallpox_events.3.t"
+	desc = "secret_smallpox_events.3.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+
+		any_owned_province = {
+			NOT = {
+				development = 15
+			}
+			base_manpower = 3
+		}
+	}
+	option = { 
+		name = "secret_smallpox_events.3.a" # We will make sure these rebels end up in hell.
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					development = 15
+				}
+				base_manpower = 3
+			}
+
+			spawn_rebels = {
+				type = leadered_peasant_rebels
+				size = 2
+			}
+
+			add_base_manpower = -2
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+}
+
+country_event = { # Deaths in the barracks
+	id = secret_smallpox_events.4
+	title = "secret_smallpox_events.4.t"
+	desc = "secret_smallpox_events.4.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+		manpower_percentage = 30
+	}
+	option = {
+		name = "secret_smallpox_events.4.a"
+		add_yearly_manpower = -2
+	}
+}
+
+country_event = { # Smallpox spreads in the navy
+	id = secret_smallpox_events.5
+	title = "secret_smallpox_events.5.t"
+	desc = "secret_smallpox_events.5.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+		sailors = 50
+		
+		OR = {
+			num_of_light_ship = 5
+			num_of_galley = 5
+			num_of_heavy_ship = 5
+			num_of_transport = 5
+		}
+		NOT = {
+			has_country_modifier = "secret_smallpox_in_navy"
+		}
+	}
+	option = {
+		name = "secret_smallpox_events.5.a"
+
+		add_yearly_sailors = -2
+		add_country_modifier = {
+			name = "secret_smallpox_in_navy"
+			duration = 1825
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 2
+	}
+}
+
+country_event = { # Smallpox
+	id = secret_smallpox_events.6
+	title = "secret_smallpox_events.6.t"
+	desc = "secret_smallpox_events.6.desc"
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Let's hope we make it through this.
+		name = "secret_smallpox_events.6.a"
+	}
+}
+
+country_event = { # End of an epidemic
+	id = secret_smallpox_events.7
+	title = "secret_smallpox_events.7.t"
+	desc = "secret_smallpox_events.7.desc"
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = "secret_smallpox_events.7.a"
+		add_stability = 2
+		add_country_modifier = {
+			name = "secret_recovering_society"
+			duration = 3650
+		}
+		set_country_flag = "had_smallpox_disaster"
+	}
+}
+
+country_event = { # Infection spreads in the army
+	id = secret_smallpox_events.8
+	title = "secret_smallpox_events.8.t"
+	desc = "secret_smallpox_events.8.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+		is_at_war = yes
+
+		NOT = {
+			has_country_modifier = "secret_smallpox_in_army"
+		}
+	}
+	option = {
+		name = "secret_smallpox_events.8.a"
+		add_yearly_manpower = -1
+		add_country_modifier = {
+			name = "secret_smallpox_in_army"
+			duration = 1095
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 20
+	}
+}
+
+country_event = { # Smallpox becomes a pandemic
+	id = secret_smallpox_events.9
+	title = "secret_smallpox_events.9.t"
+	desc = "secret_smallpox_events.9.desc"
+
+	trigger = {
+		NOT = {
+			has_country_flag = "notified_about_pandemic"
+		}
+		calc_true_if = {
+			amount = 5
+			all_country = {
+				has_disaster_progress = {
+					disaster = smallpox_disaster
+					value = 50
+				}
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = "notified_about_pandemic"
+	}
+	option = {
+		trigger = {
+			has_disaster = smallpox_disaster
+		}
+		name = "secret_smallpox_events.9.a" # It sure smells death everywhere.
+	}
+	option = {
+		trigger = {
+			NOT = {
+				has_disaster = smallpox_disaster
+			}
+		}
+		name = "secret_smallpox_events.9.b" # Let's hope we don't get it.
+	}
+}
+
+country_event = { # Ruler infected by Smallpox
+	id = secret_smallpox_events.10
+	title = "secret_smallpox_events.10.t"
+	desc = "secret_smallpox_events.10.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+		has_regency = no
+		is_subject = no
+	}
+	option = { # Let's try an experimental treatment.
+		name = "secret_smallpox_events.10.a"
+
+		random_list = {
+			50 = {
+				kill_ruler = yes
+			}
+			50 = {
+				change_adm = -1
+				change_dip = -1
+				change_mil = -1
+				add_ruler_personality = disfigured_personality
+			}
+		}
+	}
+
+	option = { # Let God decide his fate.
+	name = "secret_smallpox_events.10.b"
+		random_list = {
+			90 = {
+				kill_ruler = yes
+			}
+			10 = {
+				add_ruler_personality = disfigured_personality
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 5
+	}
+}
+
+country_event = { ## TODO: This event doesn't seem to work well ingame. Kill_heir bugged?
+	id = secret_smallpox_events.11 
+	title = "secret_smallpox_events.11.t"
+	desc = "secret_smallpox_events.11.desc"
+
+	trigger = {
+		has_disaster = smallpox_disaster
+		has_heir = yes
+		is_subject = no
+	}
+
+	option = { # Let's try an experimental treatment.
+		name = "secret_smallpox_events.11.a"
+		random_list = {
+			50 = {
+				kill_heir = yes
+			}
+			50 = {
+				change_heir_adm = -1
+				change_heir_dip = -1
+				change_heir_mil = -1
+				add_ruler_personality = disfigured_personality
+			}
+		}
+	}
+
+	option = { # Let God decide his fate.
+		name = "secret_smallpox_events.11.b"
+		random_list = {
+			90 = {
+				kill_heir = yes
+			}
+			10 = {
+				add_ruler_personality = disfigured_personality
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 5
+	}
+}

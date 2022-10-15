@@ -23,7 +23,7 @@ country_event = {
         add_country_modifier = {
             name = "secret_increased_aggressive_expansion_phase_one_hard"
             desc = "desc_secret_increased_aggressive_expansion_phase_one_hard"
-            duration = 56940
+            duration = -1
         }
         set_country_flag = "secret_hre_players"
     }
@@ -59,7 +59,7 @@ country_event = {
         add_country_modifier = {
             name = "secret_increased_aggressive_expansion_phase_one_medium"
             desc = "desc_secret_increased_aggressive_expansion_phase_one_medium"
-            duration = 56940
+            duration = -1
         }
         set_country_flag = "has_baltic_agreement"
         set_country_flag = "secret_baltic_players"
@@ -85,7 +85,7 @@ country_event = {
         add_country_modifier = {
             name = "secret_reduced_governing_capacity"
             desc = "desc_secret_reduced_governing_capacity"
-            duration = 56940
+            duration = -1
         }
         set_country_flag = "secret_baltic_players"
     }

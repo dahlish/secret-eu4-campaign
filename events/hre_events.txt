@@ -147,7 +147,7 @@ country_event = {
 		}
 
 		religion = protestant
-		is_year = 1455
+		is_year = 1500
 	}
 
 	option = { #The Empire needs to be modernised.
