@@ -3,5 +3,5 @@ tags={
 	"Alternative History"
 }
 name="Secret Campaign"
-supported_version="1.34.3"
+supported_version="1.34.4"
 remote_file_id="2873190930"
