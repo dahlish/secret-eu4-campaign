@@ -135,3 +135,7 @@ strengthened_baltic_agreement = {
 	diplomatic_reputation = 1
 	diplomatic_upkeep = 1
 }
+secret_muscovy_modifier = {
+	infantry_power = 0.25
+	global_tax_modifier = 0.35
+}
