@@ -8,16 +8,14 @@ country_event = { # New deaths in [Get.Name]
 	trigger = {
 		has_disaster = smallpox_disaster
 		any_owned_province = {
-			development = 19
+			development = 18
 		}
 	}
 
 	immediate = {
 		random_owned_province = {
 			limit = {
-				base_tax = 5
-				base_manpower = 5
-				base_production = 5
+				development = 18
 			}
 			save_event_target_as = smallpox_province_target
 		}
@@ -26,21 +24,49 @@ country_event = { # New deaths in [Get.Name]
 		name = "secret_smallpox_events.1.a"
 
 		event_target:smallpox_province_target = { ##TODO: Fix so that it gives penalties depending on which dev is the highest to prevent bugs.
-			random_list = {
-				50 = {
-					add_base_tax = -1
-					add_base_manpower = -1
-					add_base_production = -2
+		random_list = {
+			50 = {
+				if = {
+					limit = {
+						base_tax = 3
+					}
+					add_base_tax = -2
 				}
-				25 = {
-					add_base_tax = -3
+				if = {
+					limit = {
+						base_manpower = 3
+					}
 					add_base_manpower = -2
-					add_base_production = -2
 				}
-				25 = {
-					add_base_tax = -3
+				if = {
+					limit = {
+						base_production = 3
+					}
+					add_base_production = -2
 				}
 			}
+			50 = {
+				if = {
+					limit = {
+						base_tax = 2
+					}
+					add_base_tax = -1
+				}
+				if = {
+					limit = {
+						base_manpower = 2
+					}
+					add_base_manpower = -1
+				}
+				if = {
+					limit = {
+						base_production = 2
+					}
+					add_base_production = -1
+				}
+			}
+		}
+
 		}
 	}
 
@@ -66,6 +92,7 @@ country_event = { # Subsidies for failing businesses
 		random_owned_province = {
 			limit = {
 				development = 18
+				base_tax = 3
 			}
 
 			add_base_tax = -2
@@ -124,7 +151,7 @@ country_event = { # Deaths in the barracks
 
 	trigger = {
 		has_disaster = smallpox_disaster
-		manpower_percentage = 30
+		manpower_percentage = 0.3
 	}
 	option = {
 		name = "secret_smallpox_events.4.a"
@@ -294,49 +321,6 @@ country_event = { # Ruler infected by Smallpox
 		random_list = {
 			90 = {
 				kill_ruler = yes
-			}
-			10 = {
-				add_ruler_personality = disfigured_personality
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		years = 5
-	}
-}
-
-country_event = { ## TODO: This event doesn't seem to work well ingame. Kill_heir bugged?
-	id = secret_smallpox_events.11 
-	title = "secret_smallpox_events.11.t"
-	desc = "secret_smallpox_events.11.desc"
-
-	trigger = {
-		has_disaster = smallpox_disaster
-		has_heir = yes
-		is_subject = no
-	}
-
-	option = { # Let's try an experimental treatment.
-		name = "secret_smallpox_events.11.a"
-		random_list = {
-			50 = {
-				kill_heir = yes
-			}
-			50 = {
-				change_heir_adm = -1
-				change_heir_dip = -1
-				change_heir_mil = -1
-				add_ruler_personality = disfigured_personality
-			}
-		}
-	}
-
-	option = { # Let God decide his fate.
-		name = "secret_smallpox_events.11.b"
-		random_list = {
-			90 = {
-				kill_heir = yes
 			}
 			10 = {
 				add_ruler_personality = disfigured_personality
