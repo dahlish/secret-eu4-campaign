@@ -1,0 +1,3 @@
+test_modifier = {
+	global_trade_power = 0.2
+}
