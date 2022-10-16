@@ -414,6 +414,12 @@ country_event = { # Smallpox arrives with ships
 		any_owned_province = {
 			development = 18
 		}
+		NOT = {
+			has_country_flag = "had_smallpox_disaster"
+		}
+		NOT = {
+			has_disaster = smallpox_disaster
+		}
 	}
 	option = {
 		name = "secret_smallpox_events.12.a"
