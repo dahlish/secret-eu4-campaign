@@ -1,6 +1,6 @@
 smallpox_disaster = {
 	potential = {
-		is_year = 1444 #Year is only for testing, actual year should be or around 1650
+		is_year = 1625
 		any_owned_province = {
 			continent = europe
 			development = 18

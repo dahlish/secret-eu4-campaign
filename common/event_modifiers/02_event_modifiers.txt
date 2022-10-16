@@ -147,7 +147,7 @@ secret_smallpox_in_navy = {
 secret_smallpox_in_army = {
 	land_morale = -0.15
 	land_attrition = 2
-	movement_speed = 0.25
+	movement_speed = -0.25
 }
 secret_recovering_society = {
 	development_cost_modifier = -0.2
@@ -163,4 +163,11 @@ secret_local_smallpox_outbreak = {
 	local_tax_modifier = -0.5
 	province_trade_power_modifier = -0.5
 	local_development_cost_modifier = 0.5
+}
+
+secret_swedish_advantage = {
+	land_morale = 0.15
+	discipline = 0.05
+	global_tax_modifier = 0.3
+	development_cost_modifier = -0.1
 }
