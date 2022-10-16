@@ -219,10 +219,68 @@ country_event = { # End of an epidemic
 	major = yes
 
 	option = {
+		trigger = {
+			calc_true_if = {
+				amount = 1
+				all_owned_province = {
+
+				}
+			}
+			NOT = {
+				calc_true_if = {
+					amount = 10
+					all_owned_province = {
+
+					}
+				}
+			}
+		}
 		name = "secret_smallpox_events.7.a"
 		add_stability = 2
 		add_country_modifier = {
-			name = "secret_recovering_society"
+			name = "secret_recovering_society_small"
+			duration = 3650
+		}
+		set_country_flag = "had_smallpox_disaster"
+	}
+	option = {
+		trigger = {
+			calc_true_if = {
+				amount = 10
+				all_owned_province = {
+
+				}
+			}
+			NOT = {
+				calc_true_if = {
+					amount = 30
+					all_owned_province = {
+						
+					}
+				}
+			}
+		}
+		name = "secret_smallpox_events.7.b"
+		add_stability = 2
+		add_country_modifier = {
+			name = "secret_recovering_society_medium"
+			duration = 3650
+		}
+		set_country_flag = "had_smallpox_disaster"
+	}
+	option = {
+		trigger = {
+			calc_true_if = {
+				amount = 30
+				all_owned_province = {
+
+				}
+			}
+		}
+		name = "secret_smallpox_events.7.c"
+		add_stability = 2
+		add_country_modifier = {
+			name = "secret_recovering_society_large"
 			duration = 3650
 		}
 		set_country_flag = "had_smallpox_disaster"
