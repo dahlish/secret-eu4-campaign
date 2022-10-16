@@ -157,6 +157,10 @@ country_event = { # Deaths in the barracks
 		name = "secret_smallpox_events.4.a"
 		add_yearly_manpower = -2
 	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
 }
 
 country_event = { # Smallpox spreads in the navy
@@ -262,11 +266,15 @@ country_event = { # Smallpox becomes a pandemic
 			has_country_flag = "notified_about_pandemic"
 		}
 		calc_true_if = {
-			amount = 5
+			amount = 10
 			all_country = {
-				has_disaster_progress = {
-					disaster = smallpox_disaster
-					value = 50
+				OR = {
+					has_disaster_progress = {
+						disaster = smallpox_disaster
+						value = 50
+					}
+					has_disaster = smallpox_disaster
+					has_country_flag = "had_smallpox_disaster"
 				}
 			}
 		}
@@ -299,6 +307,9 @@ country_event = { # Ruler infected by Smallpox
 		has_disaster = smallpox_disaster
 		has_regency = no
 		is_subject = no
+		NOT = {
+			has_ruler_flag = "ruler_had_smallpox"
+		}
 	}
 	option = { # Let's try an experimental treatment.
 		name = "secret_smallpox_events.10.a"
@@ -312,6 +323,7 @@ country_event = { # Ruler infected by Smallpox
 				change_dip = -1
 				change_mil = -1
 				add_ruler_personality = disfigured_personality
+				set_ruler_flag = "ruler_had_smallpox"
 			}
 		}
 	}
@@ -330,5 +342,52 @@ country_event = { # Ruler infected by Smallpox
 
 	mean_time_to_happen = {
 		years = 5
+	}
+}
+
+country_event = { # More Infections
+	id = secret_smallpox_events.11
+	title = "secret_smallpox_events.11.t"
+	desc = "secret_smallpox_events.11.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_smallpox_events.11.a"
+
+		random_owned_province = {
+			limit = {
+				development = 18
+				OR = {
+					base_tax = 2
+					base_production = 2
+					base_manpower = 2
+				}
+			}
+
+			random_list = {		
+				33 = {
+					trigger = {
+						base_tax = 2
+					}
+					add_base_tax = -1
+				}
+				
+				33 = {
+					trigger = {
+						base_manpower = 2
+					}
+					add_base_manpower = -1
+					
+				}
+				33 = {
+					trigger = {
+						base_production = 2
+					}
+					add_base_production = -1
+				}
+			}
+
+		}
 	}
 }
