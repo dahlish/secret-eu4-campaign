@@ -493,3 +493,58 @@ country_event = { # Smallpox spreads to [colony].
 		}
 	}
 }
+
+
+province_event = {
+	id = "secret_smallpox_events.14"
+	title = "secret_smallpox_Events.14.t"
+	desc = "secret_smallpox_events.14.desc"
+
+	trigger = {
+		owner = {
+			any_neighbor_country = {
+				has_disaster = smallpox_disaster
+			}
+			NOT = {
+				has_disaster = smallpox_disaster
+			}
+		}
+		NOT = {
+			has_province_modifier = "secret_local_smallpox_outbreak"
+		}
+		development = 8
+	}
+
+	option = {
+		name = "secret_smallpox_events.14.a"
+		add_province_modifier = {
+			name = "secret_local_smallpox_outbreak"
+			duration = 730
+		}
+
+		random_list = {
+			33 = {
+				trigger = {
+					base_tax = 2
+				}
+				add_base_tax = -1
+			}
+			33 = {
+				trigger = {
+					base_production = 2
+				}
+				add_base_production = -1
+			}
+			33 = {
+				trigger = {
+					base_manpower = 2
+				}
+				add_base_manpower = -1
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 5
+	}
+}

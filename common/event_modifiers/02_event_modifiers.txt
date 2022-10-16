@@ -157,3 +157,10 @@ secret_recovering_society = {
 	build_cost = -0.25
 	build_time = 0.5
 }
+
+secret_local_smallpox_outbreak = {
+	local_production_efficiency = -0.5
+	local_tax_modifier = -0.5
+	province_trade_power_modifier = -0.5
+	local_development_cost_modifier = 0.5
+}
