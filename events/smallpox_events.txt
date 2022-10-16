@@ -350,7 +350,9 @@ country_event = { # More Infections
 	title = "secret_smallpox_events.11.t"
 	desc = "secret_smallpox_events.11.desc"
 
-	is_triggered_only = yes
+	trigger = {
+		has_disaster = smallpox_disaster
+	}
 
 	option = {
 		name = "secret_smallpox_events.11.a"
@@ -388,6 +390,100 @@ country_event = { # More Infections
 				}
 			}
 
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+}
+
+country_event = { # Smallpox arrives with ships
+	id = secret_smallpox_events.12
+	title = "secret_smallpox_events.12.t"
+	desc = "secret_smallpox_events.12.desc"
+
+	immediate = {
+		save_event_target_as = colonial_smallpox_target
+	}
+	trigger = {
+		is_colonial_nation = yes
+		colonial_parent = {
+			has_disaster = smallpox_disaster
+		}
+		any_owned_province = {
+			development = 18
+		}
+	}
+	option = {
+		name = "secret_smallpox_events.12.a"
+		add_disaster_progress = {
+			value = 100
+			disaster = smallpox_disaster
+		}
+
+		colonial_parent = {
+			country_event = {
+				id = secret_smallpox_events.13
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 5
+	}
+}
+
+country_event = { # Smallpox spreads to [colony].
+	id = secret_smallpox_events.13
+	title = "secret_smallpox_events.13.t"
+	desc = "secret_smallpox_events.13.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_smallpox_events.13.a"
+		add_prestige = -15
+		event_target:colonial_smallpox_target = {
+			add_liberty_desire = 100
+		}
+	}
+	option = {
+		name = "secret_smallpox_events.13.b"
+		
+		event_target:colonial_smallpox_target = {
+			add_liberty_desire = -100
+		}
+
+		random_list = {
+			40 = {
+				add_years_of_income = -3
+				event_target:colonial_smallpox_target = {
+					add_years_of_income = 5
+				}
+			}
+			40 = {
+				add_adm_power = -75
+				add_dip_power = -75
+				add_mil_power = -75
+				event_target:colonial_smallpox_target = {
+					add_adm_power = 75
+					add_dip_power = 75
+					add_mil_power = 75
+				}
+			}
+			20 = {
+				add_years_of_income = -3
+				add_adm_power = -75
+				add_dip_power = -75
+				add_mil_power = -75
+				event_target:colonial_smallpox_target = {
+					add_years_of_income = 5
+					add_adm_power = 75
+					add_dip_power = 75
+					add_mil_power = 75
+				}
+			}
 		}
 	}
 }
