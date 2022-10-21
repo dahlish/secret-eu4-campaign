@@ -396,7 +396,7 @@ expansion = {
 			add_country_modifier = {
 				name = expansion_modifier
 				duration = -1
-				desc = "desc_exüansion_modifier"
+				desc = "desc_expansion_modifier"
 			}
 	}			
 }
@@ -419,14 +419,24 @@ an_option = {
 					}
 			}
 }
-
+}
 #greater_goals = {
 	#slot = 4
 	#generic = no
-	#ai = yes
+	#ai = no
 	#potential = {
-		#tag = ICE
+	#	tag = ICE
+	#}
+	#religious_league = {
+	#	has_country_shield = yes
+	#	position = 10
+	#	required_missions = {}
+	#	trigger = {
+
+	#	}
+	#	effect = {
+
+	#	}
 	#}
 #}
 
-}
