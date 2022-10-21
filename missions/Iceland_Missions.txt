@@ -39,7 +39,7 @@ tradition = {
 		effect = {
 			add_estate_loyalty_modifier = {
 				estate = estate_burghers
-				desc = "estate_loyalty_modifier_desc"
+				desc = "desc_estate_loyalty_modifier"
 				loyalty = 20
 				duration = -1
 			}
@@ -95,7 +95,7 @@ tradition = {
 		}
 		effect = {
 			add_prestige = 30
-			#add_power_projection = 30
+			create_vassal = PAP
  	}
 }
 	colonial = {
@@ -125,8 +125,11 @@ tradition = {
 			}
 			}
 		effect = {
-			#global_trade_power = 0.15
-			#merchants = 1
+			add_country_modifier = {
+				name = colonial_modifier
+				duration = -1
+				desc = "desc_colonial_modifier"
+			}
 			}
 				
 	}
@@ -219,8 +222,11 @@ tall = {
 					}
 			}
 		effect = { 
-				#global_manpower_modifier = 0.15
-				#production_efficiency = 0.15
+			add_country_modifier = {
+				name = tall_modifier
+				duration = -1
+				desc = "desc_tall_modifier"
+			}
 			}
 		}
 }
@@ -337,10 +343,14 @@ gather_ducats = {
 			treasury = 4269
 			}
 		effect = {
-			#taxation_modifier = 0.10
+			add_country_modifier = {
+				name = gather_ducats_modifier
+				duration = -1
+				desc = "desc_gather_ducats_modifier"
+			}
 			}	
 }
-tschuu_tschuu = {
+train_train = {
 		icon = mission_rb_prospect_for_coal
 		position = 3
 		required_missions = {gather_ducats}
@@ -356,21 +366,22 @@ tschuu_tschuu = {
 				years = 2
 			} 
 		}
-}
+	}
 intercity_express = {
 		icon = mission_rb_build_furnaces
 		position = 4
-		required_missions = {tschuu_tschuu}
+		required_missions = {train_train}
 		trigger = {		
 			371 = {
 			has_building = university
 			}
 		}
 		effect = {
-			#add_permanent_province_modifier = { 
-    		#local_production_efficiency = 0.1
-    		#duration = -1  
-			#}
+			add_province_modifier = { 
+    		name = intercity_express_modifier
+    		duration = -1 
+			desc = "desc_intercity_modifier"
+			}
 		}
 }
 expansion = {
@@ -382,8 +393,11 @@ expansion = {
 				grown_by_states = 7
 	}
 		effect = {
-			#ae_impact = -0.2
-			#governing_capacity_modifier = 0.15
+			add_country_modifier = {
+				name = expansion_modifier
+				duration = -1
+				desc = "desc_exüansion_modifier"
+			}
 	}			
 }
 an_option = {
