@@ -58,7 +58,6 @@ CLI_ideas = {
 
 	cli_border_protector = {
 		fort_maintenance_modifier = -0.25
-		land_morale = 0.1
 	}
 	cli_mercenary_captains = {
 		leader_land_shock = 1
