@@ -32,8 +32,7 @@ country_event = {
 	trigger = {
 		OR = {
 			tag = BRU
-			tag = BOH
-			tag = FRI
+			tag = UBV
 		}
 
 		NOT = {
@@ -77,8 +76,7 @@ country_event = {
 	trigger = {
 		OR = {
 			tag = CLI
-			tag = SWI
-			tag = UBV
+			tag = FRI
 		}
 
 		NOT = {

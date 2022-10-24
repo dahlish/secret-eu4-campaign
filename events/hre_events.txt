@@ -1,41 +1,6 @@
 namespace = secret_hre_events
 
 country_event = {
-	id = secret_hre_events.1
-	title = "secret_hre_events.1.t"
-	desc = "secret_hre_events.1.desc"
-	
-	fire_only_once = yes
-	major = yes
-
-	trigger = {
-		has_country_flag = "secret_hre_players"
-		is_emperor = yes
-	}
-	option = { #Abolish the law
-		name = "secret_hre_events.1.a"
-
-		every_country = {
-			limit = {
-				has_country_flag = "secret_hre_players"
-			}
-			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_hard"
-		}
-
-		add_prestige = -50
-		add_adm_power = -100
-		add_dip_power = -100		
-	}
-
-	option = { #Keep the law
-		name = "secret_hre_events.1.b"
-		add_prestige = 50
-		add_adm_power = 100
-		add_dip_power = 100
-	}
-}
-
-country_event = {
 	id = secret_hre_events.2
 	title = "secret_hre_events.2.t"
 	desc = "secret_hre_events.2.desc"
@@ -52,6 +17,14 @@ country_event = {
 		is_elector = no
 		exists = BRA
 		is_year = 1500
+		OR = {
+			NOT = {
+				tag = UBV
+			}
+			NOT = {
+				was_tag = UBV
+			}
+		}
 	}
 
 	option = { #We will be the new electors.

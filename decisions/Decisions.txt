@@ -64,4 +64,29 @@ country_decisions = {
 			factor = 1
 		}
 	}
+
+	leave_baltic_agreement = {
+		major = yes
+		potential = {
+			has_country_flag = "has_baltic_agreement"
+		}
+
+		allow = {
+			is_year = 1450
+			is_at_war = no
+			dip_power = 100
+			stability = 0
+		}
+		effect = {
+			add_stability = -1
+			add_dip_power = -100
+			remove_country_modifier = "secret_increased_aggressive_expansion_phase_one_medium"
+			remove_country_modifier = "strengthened_baltic_agreement"
+			
+			add_country_modifier = {
+				name = "secret_increased_aggressive_expansion_phase_one_medium_left"
+				duration = -1
+			}
+		}
+	}
 }

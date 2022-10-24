@@ -15,6 +15,10 @@ secret_increased_aggressive_expansion_phase_one_medium = {
 	merchants = 1
 	center_of_trade_upgrade_cost = -0.25
 }
+secret_increased_aggressive_expansion_phase_one_medium_left = {
+	ae_impact = 0.7
+	diplomatic_reputation = -1
+}
 secret_reduced_governing_capacity = {
 	governing_capacity_modifier = -0.75
 	ae_impact = 0.7
@@ -187,4 +191,12 @@ secret_swedish_advantage = {
 	discipline = 0.05
 	global_tax_modifier = 0.3
 	development_cost_modifier = -0.1
+}
+
+secret_wisdom_teeth_allow = {
+	land_morale = 0.025
+}
+secret_wisdom_teeth_ban = {
+	manpower_recovery_speed = 0.05
+	land_morale = -0.025
 }
