@@ -71,17 +71,17 @@ tradition = {
 		position = 3
 		required_missions = { focus_on_trade }
 		trigger = {
-			all_owned_province = {
-				calc_true_if = {
-					amount = 7
+				num_of_owned_provinces_with = {
+					value = 7
+					religion = norse_pagan_reformed
 				}
-			}
 			religious_unity = 1
-			religion = norse_pagan_reformed
 		}
 		effect = {
-			370 = {
-			          add_reform_center = norse_pagan_reformed
+			add_country_modifier = {
+				name = spread_norse_modifier
+				duration = -1
+				desc = "desc_spread_norse_modifier"
 			}
 		}
 	}

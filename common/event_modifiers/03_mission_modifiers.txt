@@ -29,3 +29,8 @@ coldest_north_and_south_modifier = {
 	colonists = 1
 	global_colonial_growth = 20
 }
+
+spread_norse_modifier = {
+	enforce_religion_cost = -0.5
+	global_missionary_strength = 0.03
+}
