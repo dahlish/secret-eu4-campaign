@@ -178,6 +178,9 @@ secret_recovering_society_large = { # Large nation version
 	build_time = 0.5
 }
 
+secret_gutnish_production = {
+	trade_goods_size = 3
+}
 
 secret_local_smallpox_outbreak = {
 	local_production_efficiency = -0.5
@@ -199,4 +202,17 @@ secret_wisdom_teeth_allow = {
 secret_wisdom_teeth_ban = {
 	manpower_recovery_speed = 0.05
 	land_morale = -0.025
+}
+
+secret_condottieri_increase_stage_1 = {
+	possible_condottieri = 1
+}
+secret_condottieri_increase_stage_2 = {
+	possible_condottieri = 3
+}
+secret_condottieri_increase_stage_3 = {
+	possible_condottieri = 6
+}
+secret_condottieri_increase_stage_4 = {
+	possible_condottieri = 10
 }
