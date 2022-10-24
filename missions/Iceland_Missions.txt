@@ -137,12 +137,12 @@ tradition = {
 		position = 6
 		required_missions = {colonial}
 		provinces_to_highlight = {
-			colonial_region = tasmania_area
+			area = tasmania_area
 		}
 		trigger = {
-			country_or_non_sovereign_subject_holds = {
-				colonial_region = tasmania_area
-			}
+			#country_or_non_sovereign_subject_holds = root 
+			#colonial_region = tasmania_area
+			
 		}
 		effect = {
 			add_country_modifier = {
@@ -439,25 +439,6 @@ an_option = {
 						id = secret_iceland_events.2
 					}
 			}
+	}
 }
-}
-#greater_goals = {
-	#slot = 4
-	#generic = no
-	#ai = no
-	#potential = {
-		#tag = ICE
-	#
-	#religious_league = {
-	#	has_country_shield = yes
-	#	position = 10
-	#	required_missions = {}
-	#	trigger = {
-
-	#	}
-	#	effect = {
-
-	#	}
-	#}
-#}
 
