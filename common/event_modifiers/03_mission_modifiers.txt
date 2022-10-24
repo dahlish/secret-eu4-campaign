@@ -13,7 +13,7 @@ tall_modifier = {
 }
 
 gather_ducats_modifier = {
-	taxation_modifier = 0.10
+	global_tax_modifier = 0.1
 }
 
 intercity_express_modifier = {

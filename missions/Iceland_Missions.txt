@@ -377,11 +377,13 @@ intercity_express = {
 			}
 		}
 		effect = {
+			371 = {
 			add_province_modifier = { 
     		name = intercity_express_modifier
     		duration = -1 
-			desc = "desc_intercity_modifier"
+			desc = "desc_intercity_express_modifier"
 			}
+		}
 		}
 }
 expansion = {
