@@ -131,7 +131,26 @@ tradition = {
 				desc = "desc_colonial_modifier"
 			}
 			}
-				
+	}
+	coldest_north_and_south = {
+		icon = mission_rb_settle_the_north
+		position = 6
+		required_missions = {colonial}
+		provinces_to_highlight = {
+			colonial_region = tasmania_area
+		}
+		trigger = {
+			country_or_non_sovereign_subject_holds = {
+				colonial_region = tasmania_area
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = coldest_north_and_south_modifier
+				duration = -1
+				desc = "desc_coldest_north_and_south_modifier"
+			}
+		}
 	}
 }
 
@@ -427,8 +446,8 @@ an_option = {
 	#generic = no
 	#ai = no
 	#potential = {
-	#	tag = ICE
-	#}
+		#tag = ICE
+	#
 	#religious_league = {
 	#	has_country_shield = yes
 	#	position = 10

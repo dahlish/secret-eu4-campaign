@@ -24,3 +24,8 @@ expansion_modifier = {
 	ae_impact = -0.2
 	governing_capacity_modifier = 0.15
 }
+
+coldest_north_and_south_modifier = {
+	colonists = 1
+	global_colonial_growth = 20
+}
