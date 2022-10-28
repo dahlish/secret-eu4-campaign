@@ -163,14 +163,7 @@ country_event = {
 				}
 			}
 		}
-
-		change_religion = catholic
-		370 = {
-			change_religion = catholic
-		}
-		371 = {
-			change_religion = catholic
-		}
+		
 		add_truce_with = DAN
 	}
 	option = { #We will never be slaves, we will be liberators.
