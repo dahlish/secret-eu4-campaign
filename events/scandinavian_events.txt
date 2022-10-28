@@ -1,0 +1,328 @@
+namespace = secret_scandinavian_events
+
+country_event = { # Icelandic missionaries arrives
+	id = secret_scandinavian_events.1
+	title = "secret_scandinavian_events.1.t"
+	desc = "secret_scandinavian_events.1.desc"
+
+	is_triggered_only = yes
+
+	option = { # Let them stay.
+		name = "secret_scandinavian_events.1.a"
+		ai_chance = {
+			factor = 75
+		}
+
+		add_country_modifier = {
+			name = "secret_icelandic_missionaries"
+			duration = 5475
+		}
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = norse_pagan_reformed
+				}
+			}
+			change_religion = norse_pagan_reformed
+		}
+
+		hidden_effect = {
+			country_event = {
+				id = 1012
+			}
+		}
+
+		set_country_flag = "secret_norse_reformation"
+	}
+	option = { # Arrest them
+		name = "secret_scandinavian_events.1.b"
+		ai_chance = {
+			factor = 25
+		}
+		ICE = {
+			add_casus_belli = {
+				type = cb_insult
+				target = ROOT
+			}
+		}
+		add_country_modifier = {
+			name = "secret_icelandic_missionaries_arrest"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { # Norse faith spreads
+	id = secret_scandinavian_events.2
+	title = "secret_scandinavian_events.2.t"
+	desc = "secret_scandinavian_events.2.desc"
+
+	trigger = {
+		has_country_flag = "secret_norse_reformation"
+	}
+
+	option = { # Well, we did welcome them.
+		name = "secret_scandinavian_events.2.a"
+
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = norse_pagan_reformed
+				}
+			}
+			change_religion = norse_pagan_reformed
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = norse_pagan_reformed
+				}
+			}
+			change_religion = norse_pagan_reformed
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = norse_pagan_reformed
+				}
+			}
+			change_religion = norse_pagan_reformed
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+}
+
+country_event = { # Norse converts demand change
+	id = secret_scandinavian_events.3
+	title = "secret_scandinavian_events.3.t"
+	desc = "secret_scandinavian_events.3.desc"
+
+	trigger = {
+		has_country_flag = "secret_norse_reformation"
+		NOT = {
+			religious_unity = 30
+		}
+	}
+	option = { # We will go back to our ancestors faith.
+		name = "secret_scandinavian_events.3.a"
+		ai_chance = {
+			factor = 90
+		}
+		add_country_modifier = {
+			name = "secret_accepted_norse_conversion"
+			duration = -1
+		}
+		clr_country_flag = "secret_norse_reformation"
+		change_religion = norse_pagan_reformed
+		set_ruler_religion = norse_pagan_reformed
+		set_heir_religion = norse_pagan_reformed
+	}
+	option = { # We must remain faithful to the catholic church.
+		name = "secret_scandinavian_events.3.b"
+		clr_country_flag = "secret_norse_reformation"
+		add_papal_influence = 100
+		add_country_modifier = {
+			name = "secret_rejected_norse_conversion"
+			duration = 7300
+		}
+		random_owned_province = {
+			limit = {
+				religion = norse_pagan_reformed
+			}
+			spawn_rebels = {
+				size = 3
+				type = norse_pagan_reformed_rebels
+			}
+		}
+		random_owned_province = {
+			limit = {
+				religion = norse_pagan_reformed
+			}
+			spawn_rebels = {
+				size = 3
+				type = norse_pagan_reformed_rebels
+			}
+		}
+		random_owned_province = {
+			limit = {
+				religion = norse_pagan_reformed
+			}
+			spawn_rebels = {
+				size = 3
+				type = norse_pagan_reformed_rebels
+			}
+		}
+	}
+}
+
+country_event = { # Icelandic missionaries spread to Gotland
+	id = secret_scandinavian_events.4
+	title = "secret_scandinavian_events.4.t"
+	desc = "secret_scandinavian_events.4.desc"
+
+	trigger = {
+		SWE = {
+			any_owned_province = {
+				religion = norse_pagan_reformed
+			}
+		}
+	}
+	option = { # Let them in.
+		name = "secret_scandinavian_events.4.a"
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = "secret_norse_reformation"
+		add_country_modifier = {
+			name = "secret_icelandic_missionaries"
+			duration = 5475
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = norse_pagan_reformed
+				}
+			}
+			change_religion = norse_pagan_reformed
+		}
+	}
+	option = { # Arrest them.
+		name = "secret_scandinavian_events.4.b"
+		ai_chance = {
+			factor = 50
+		}
+		add_country_modifier = {
+			name = "secret_icelandic_missionaries_arrest"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { # [Country] asks for missionaries
+	id = secret_scandinavian_events.5
+	title = "secret_scandinavian_events.5.t"
+	desc = "secret_scandinavian_events.5.desc"
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = sends_missionaries_target
+	}
+
+	option = { # Anyone who is open to the norse faith should follow it.
+		name = "secret_scandinavian_events.5.a"
+
+		add_prestige = 25
+
+		event_target:asks_for_missionaries_target = {
+			country_event = {
+				id = secret_scandinavian_events.6
+				days = 14
+			}
+		}
+	}
+	option = { # They do not deserve the might of the norse faith.
+		name = "secret_scandinavian_events.5.b"
+
+		add_power_projection = {
+			type = humiliated_rival
+			amount = 15
+		}
+
+		event_target:asks_for_missionaries_target = {
+			country_event = {
+				id = secret_scandinavian_events.7
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { # [sends_missionaries_target] sends missionaries
+	id = secret_scandinavian_events.6
+	title = "secret_scandinavian_events.6.t"
+	desc = "secret_scandinavian_events.6.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_scandinavian_events.6.a"
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = norse_pagan_reformed
+				}
+			}
+			change_religion = norse_pagan_reformed
+		}
+		set_country_flag = "secret_got_norse_missionaries"
+	}
+}
+
+country_event = { # [sends_missionaries_target] refuses to send missionaries.
+	id = secret_scandinavian_events.7
+	title = "secret_scandinavian_events.7.t"
+	desc = "secret_scandinavian_events.7.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_scandinavian_events.7.a"
+		add_prestige = -25
+		add_casus_belli = {
+			type = cb_insult
+			target = event_target:sends_missionaries_target
+		}
+	}
+}
+
+country_event = { # Norse faith spreads
+	id = secret_scandinavian_events.8
+	title = "secret_scandinavian_events.8.t"
+	desc = "secret_scandinavian_events.8.desc"
+
+	trigger = {
+		has_country_flag = "secret_got_norse_missionaries"
+	}
+	option = {
+		name = "secret_scandinavian_events.8.a"
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = norse_pagan_reformed
+				}
+			}
+			change_religion = norse_pagan_reformed
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+}
+
+country_event = {
+	id = secret_scandinavian_events.9
+	title = "secret_scandinavian_events.9.t"
+	desc = "secret_scandinavian_events.9.desc"
+
+	trigger = {
+		has_country_flag = "secret_got_norse_missionaries"
+		NOT = {
+			religious_unity = 30
+		}
+	}
+	option = {
+		name = "secret_scandinavian_events.9.a"
+
+		change_religion = norse_pagan_reformed
+		clr_country_flag = "secret_got_norse_missionaries"
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+}

@@ -89,4 +89,53 @@ country_decisions = {
 			}
 		}
 	}
+
+	ask_for_norse_missionaries = {
+		major = yes
+		potential = {
+			any_neighbor_country = {
+				religion = norse_pagan_reformed
+				OR = {
+					culture_group = baltic
+					culture_group = scandinavian
+					culture_group = west_slavic
+				}
+			}
+			NOT = {
+				religion = norse_pagan_reformed
+			}
+			NOT = {
+				religion = protestant
+			}
+			NOT = {
+				religion = reformed
+			}
+			NOT = {
+				has_country_flag = "secret_decision_asked_for_missionaries"
+			}
+		}
+
+		allow = {
+			is_at_war = no
+			any_neighbor_country = {
+				religion = norse_pagan_reformed
+			}
+		}
+		effect = {
+			save_event_target_as = asks_for_missionaries_target
+
+			random_neighbor_country = {
+				limit = {
+					religion = norse_pagan_reformed
+				}
+				country_event = {
+					id = secret_scandinavian_events.5
+				}
+			}
+			set_country_flag = "secret_decision_asked_for_missionaries"
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
 }

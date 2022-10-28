@@ -216,3 +216,20 @@ secret_condottieri_increase_stage_3 = {
 secret_condottieri_increase_stage_4 = {
 	possible_condottieri = 10
 }
+
+secret_icelandic_missionaries = {
+	tolerance_heathen = 2
+}
+secret_icelandic_missionaries_arrest = {
+	tolerance_heathen = -2
+}
+secret_accepted_norse_conversion = {
+	may_perform_slave_raid = yes
+	colonists = 1
+	range = 0.5
+}
+secret_rejected_norse_conversion = {
+	papal_influence = +2
+	global_unrest = 10
+	tolerance_heathen = -2
+}
