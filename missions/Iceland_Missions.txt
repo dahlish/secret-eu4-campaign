@@ -83,6 +83,25 @@ tradition = {
 				duration = -1
 				desc = "desc_spread_norse_modifier"
 			}
+
+			SWE = {
+				country_event = {
+					id = secret_scandinavian_events.1
+					days = "30"
+				}
+			}
+			NOR = {
+				country_event = {
+					id = secret_scandinavian_events.1
+					days = "18"
+				}
+			}
+			DAN = {
+				country_event = {
+					id = secret_scandinavian_events.1
+					days = "26"
+				}
+			}
 		}
 	}
 	god_tier = {

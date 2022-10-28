@@ -7,6 +7,8 @@ country_event = { # Icelandic missionaries arrives
 
 	is_triggered_only = yes
 
+	major = yes
+
 	option = { # Let them stay.
 		name = "secret_scandinavian_events.1.a"
 		ai_chance = {
@@ -25,11 +27,9 @@ country_event = { # Icelandic missionaries arrives
 				}
 			}
 			change_religion = norse_pagan_reformed
-		}
-
-		hidden_effect = {
-			country_event = {
-				id = 1012
+			add_province_modifier = {
+				name = "secret_religious_zeal"
+				duration = 18250
 			}
 		}
 
@@ -72,6 +72,10 @@ country_event = { # Norse faith spreads
 				}
 			}
 			change_religion = norse_pagan_reformed
+			add_province_modifier = {
+				name = "secret_religious_zeal"
+				duration = 18250
+			}
 		}
 		random_owned_province = {
 			limit = {
@@ -80,6 +84,10 @@ country_event = { # Norse faith spreads
 				}
 			}
 			change_religion = norse_pagan_reformed
+			add_province_modifier = {
+				name = "secret_religious_zeal"
+				duration = 18250
+			}
 		}
 		random_owned_province = {
 			limit = {
@@ -88,6 +96,10 @@ country_event = { # Norse faith spreads
 				}
 			}
 			change_religion = norse_pagan_reformed
+			add_province_modifier = {
+				name = "secret_religious_zeal"
+				duration = 18250
+			}
 		}
 	}
 
@@ -104,7 +116,7 @@ country_event = { # Norse converts demand change
 	trigger = {
 		has_country_flag = "secret_norse_reformation"
 		NOT = {
-			religious_unity = 30
+			religious_unity = 0.3
 		}
 	}
 	option = { # We will go back to our ancestors faith.
@@ -165,13 +177,19 @@ country_event = { # Icelandic missionaries spread to Gotland
 	desc = "secret_scandinavian_events.4.desc"
 
 	trigger = {
-		SWE = {
-			any_owned_province = {
-				religion = norse_pagan_reformed
+		AND = {
+			SWE = {
+				any_owned_province = {
+					religion = norse_pagan_reformed
+				}
+			}
+			OR = {
+				tag = GOT
+				was_tag = GOT
 			}
 		}
 	}
-	option = { # Let them in.
+	option = { # Follow the Swedish example.
 		name = "secret_scandinavian_events.4.a"
 		ai_chance = {
 			factor = 50
@@ -188,6 +206,10 @@ country_event = { # Icelandic missionaries spread to Gotland
 				}
 			}
 			change_religion = norse_pagan_reformed
+			add_province_modifier = {
+				name = "secret_religious_zeal"
+				duration = 18250
+			}
 		}
 	}
 	option = { # Arrest them.
@@ -249,7 +271,7 @@ country_event = { # [sends_missionaries_target] sends missionaries
 
 	is_triggered_only = yes
 
-	option = {
+	option = { # Perfect.
 		name = "secret_scandinavian_events.6.a"
 		random_owned_province = {
 			limit = {
@@ -258,6 +280,10 @@ country_event = { # [sends_missionaries_target] sends missionaries
 				}
 			}
 			change_religion = norse_pagan_reformed
+			add_province_modifier = {
+				name = "secret_religious_zeal"
+				duration = 18250
+			}
 		}
 		set_country_flag = "secret_got_norse_missionaries"
 	}
@@ -297,6 +323,10 @@ country_event = { # Norse faith spreads
 				}
 			}
 			change_religion = norse_pagan_reformed
+			add_province_modifier = {
+				name = "secret_religious_zeal"
+				duration = 18250
+			}
 		}
 	}
 
@@ -305,7 +335,7 @@ country_event = { # Norse faith spreads
 	}
 }
 
-country_event = {
+country_event = { # Norse converts demands change of ways
 	id = secret_scandinavian_events.9
 	title = "secret_scandinavian_events.9.t"
 	desc = "secret_scandinavian_events.9.desc"
@@ -313,7 +343,7 @@ country_event = {
 	trigger = {
 		has_country_flag = "secret_got_norse_missionaries"
 		NOT = {
-			religious_unity = 30
+			religious_unity = 0.3
 		}
 	}
 	option = {

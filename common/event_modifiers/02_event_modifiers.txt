@@ -237,3 +237,6 @@ secret_rejected_norse_conversion = {
 secret_staging_coup = {
 	spy_offence = 0.25
 }
+secret_religious_zeal = {
+	local_missionary_strength = -0.5
+}
