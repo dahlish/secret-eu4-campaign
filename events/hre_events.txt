@@ -70,7 +70,7 @@ country_event = {
 
 	option = { #It is already too late.
 		ai_chance = {
-			factor = 90
+			factor = 100
 		}
 		name = "secret_hre_events.3.a"
 		event_target:gets_vassal_event_target = {
@@ -83,7 +83,7 @@ country_event = {
 	}
 	option = { #We cannot let this happen!
 		ai_chance = {
-			factor = 10
+			factor = 0
 		}
 		name = "secret_hre_events.3.b"
 

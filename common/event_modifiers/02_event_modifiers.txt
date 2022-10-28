@@ -233,3 +233,6 @@ secret_rejected_norse_conversion = {
 	global_unrest = 10
 	tolerance_heathen = -2
 }
+secret_staging_coup = {
+	spy_offence = 0.25
+}

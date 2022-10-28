@@ -99,6 +99,8 @@ country_decisions = {
 					culture_group = baltic
 					culture_group = scandinavian
 					culture_group = west_slavic
+					culture = baltic_german
+					culture = prussian
 				}
 			}
 			NOT = {
