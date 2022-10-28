@@ -46,6 +46,11 @@ country_event = {
 			factor = 100
 		}
 
+		add_country_modifier = {
+			name = "secret_staging_coup"
+			duration = 1825
+		}
+
 		BRA = {
 				country_event = {
 				id = secret_hre_events.3
@@ -358,5 +363,77 @@ country_event = { #[Nation] joins our cause!
 			who = event_target:sends_aid_target
 			modifier = secret_greatly_increased_opinion
 		}
+	}
+}
+
+province_event = { # Copper discovered in [Province]
+	id = secret_hre_events.11
+	title = "secret_hre_events.11.t"
+	desc = "secret_hre_events.11.desc"
+
+	major = yes
+
+	trigger = {
+		owner = {
+			ai = no
+			is_part_of_hre = yes
+			NOT = {
+				has_country_flag = "secret_found_copper"
+			}
+		}
+		base_production = 3
+		trade_goods = iron
+	}
+	option = {
+		name = "secret_hre_events.11.a"
+		change_trade_goods = copper
+		owner = {
+			set_country_flag = "secret_found_copper"
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+}
+
+province_event = { # Gold discovered in [Province]
+	id = secret_hre_events.12
+	title = "secret_hre_events.12.t"
+	desc = "secret_hre_events.12.desc"
+
+	major = yes
+
+	trigger = {
+		owner = {
+			ai = no
+			NOT = {
+				has_country_flag = "secret_found_gold"
+			}
+		}
+		base_production = 5
+	}
+	option = { # Let's give him a cut form the mine and an advisory role.
+		name = "secret_hre_events.12.a"
+		change_trade_goods = gold
+		owner = {
+			set_country_flag = "secret_found_gold"
+			define_advisor = {
+				type = natural_scientist
+				skill = 3
+				cost_multiplier = 0.25
+			}
+		}
+		add_base_production = -3
+	}
+	
+	option = { # Don't reward him.
+		name = "secret_hre_events.12.b"
+		owner = {
+			set_country_flag = "secret_found_gold"
+		}
+		change_trade_goods = gold
+	}
+	mean_time_to_happen = {
+		years = 300
 	}
 }
