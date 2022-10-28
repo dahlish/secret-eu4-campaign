@@ -60,6 +60,11 @@ country_event = { # Norse faith spreads
 
 	trigger = {
 		has_country_flag = "secret_norse_reformation"
+		any_owned_province = {
+			NOT = {
+				religion = norse_pagan_reformed
+			}
+		}
 	}
 
 	option = { # Well, we did welcome them.
@@ -313,6 +318,11 @@ country_event = { # Norse faith spreads
 
 	trigger = {
 		has_country_flag = "secret_got_norse_missionaries"
+		any_owned_province = {
+			NOT = {
+				religion = norse_pagan_reformed
+			}
+		}
 	}
 	option = {
 		name = "secret_scandinavian_events.8.a"
