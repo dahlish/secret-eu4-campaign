@@ -163,7 +163,7 @@ country_event = {
 				}
 			}
 		}
-		
+
 		add_truce_with = DAN
 	}
 	option = { #We will never be slaves, we will be liberators.
@@ -271,9 +271,9 @@ country_event = {
 		}
 
 		370 = {
-			add_base_production = -7
-			add_base_tax = -3
-			add_base_manpower = -3
+			add_base_production = -5
+			add_base_tax = -2
+			add_base_manpower = -2
 			change_trade_goods = livestock
 			add_province_modifier = {
 				name = "secret_investing_in_livestock"
