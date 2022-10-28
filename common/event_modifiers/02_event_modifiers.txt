@@ -124,8 +124,9 @@ secret_angry_population = {
 }
 secret_breaking_baltic_agreement = {
 	ae_impact = 0.5
-	trade_efficiency = -0.25
+	trade_efficiency = -0.35
 	merchants = -1
+	diplomatic_reputation = -2
 	center_of_trade_upgrade_cost = 0.5
 }
 strengthened_baltic_agreement = {
