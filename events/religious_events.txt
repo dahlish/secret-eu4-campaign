@@ -84,3 +84,39 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = secret_religious_events.3
+	title = "secret_religious_events.3.t"
+	desc = "secret_religious_events.3.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_religious_events.3.a"
+
+		random_list = {
+			30 = {
+				add_country_modifier = {
+					name = "secret_blut_heir_administrative"
+					duration = 1825
+				}
+			}
+			30 = {
+				add_country_modifier = {
+					name = "secret_blut_heir_diplomatic"
+					duration = 1825
+				}
+			}
+			30 = {
+				add_country_modifier = {
+					name = "secret_blut_heir_military"
+					duration = 1825
+				}
+			}
+			10 = {
+				
+			}
+		}
+	}
+}

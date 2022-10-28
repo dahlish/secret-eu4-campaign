@@ -146,4 +146,32 @@ country_decisions = {
 			factor = 0
 		}
 	}
+
+	secret_blut_heir = {
+		potential = {
+			has_heir = yes
+			religion = norse_pagan_reformed
+		}
+		allow = {
+			has_heir = yes
+
+			AND = {
+				NOT = {
+					has_country_modifier = "secret_blut_heir_military"
+				}
+				NOT = {
+					has_country_modifier = "secret_blut_heir_administrative"
+				}
+				NOT = {
+					has_country_modifier = "secret_blut_heir_diplomatic"
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = secret_religious_events.3
+			}
+			kill_heir = yes # This is no error. It works. The intellisense in vscode is bugged.
+		}
+	}
 }

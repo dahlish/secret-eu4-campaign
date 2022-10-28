@@ -240,3 +240,13 @@ secret_staging_coup = {
 secret_religious_zeal = {
 	local_missionary_strength = -0.5
 }
+
+secret_blut_heir_military = {
+	land_morale = 0.1
+}
+secret_blut_heir_diplomatic = {
+	production_efficiency = 0.1
+}
+secret_blut_heir_administrative = {
+	global_tax_modifier = 0.1
+}
