@@ -104,27 +104,63 @@ country_event = {
 						}
 					}
 				}
+				1979 = {
+					cede_province = ICE
+				}
+				1978 = {
+					cede_province = ICE
+				}
+				23 = {
+					cede_province = ICE
+				}
+				24 = {
+					cede_province = ICE
+				}
+				2752 = {
+					cede_province = ICE
+				}
+				20 = {
+					cede_province = ICE
+				}
+				21 = {
+					cede_province = ICE
+				}
 			}
-			1979 = {
-				cede_province = ICE
+			else_if = {
+				limit = {
+					OR = {
+						DAN = {
+							AND = {
+								owns_core_province = 1979
+								owns_core_province = 1978
+							}
+						}
+						NOR = {
+							AND = {
+								owns_core_province = 1979
+								owns_core_province = 1978
+							}
+						}
+					}
+				}
+				1979 = {
+					cede_province = ICE
+				}
+				1978 = {
+					cede_province = ICE
+				}
 			}
-			1978 = {
-				cede_province = ICE
-			}
-			23 = {
-				cede_province = ICE
-			}
-			24 = {
-				cede_province = ICE
-			}
-			2752 = {
-				cede_province = ICE
-			}
-			20 = {
-				cede_province = ICE
-			}
-			21 = {
-				cede_province = ICE
+			else = {
+				capital_scope = {
+					add_base_production = 10
+					add_base_tax = 10
+					add_base_manpower = 10
+				}
+				random_owned_province = {
+					add_base_production = 10
+					add_base_tax = 10
+					add_base_manpower = 10
+				}
 			}
 		}
 
