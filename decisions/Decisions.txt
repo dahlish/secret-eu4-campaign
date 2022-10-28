@@ -174,4 +174,5 @@ country_decisions = {
 			kill_heir = yes # This is no error. It works. The intellisense in vscode is bugged.
 		}
 	}
+	
 }
