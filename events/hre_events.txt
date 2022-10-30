@@ -440,4 +440,35 @@ province_event = { # Gold discovered in [Province]
 	}
 }
 
+country_event = { # [Nation] recognized as a prestigeous nation
+	id = secret_hre_events.13
+	title = "secret_hre_events.13.t"
+	desc = "secret_hre_events.13.desc"
+
+	trigger = {
+		is_part_of_hre = yes
+		ai = no
+		prestige = 80
+		NOT = {
+			is_year = 1600
+		}
+		NOT = {
+			has_country_modifier = "secret_prestigeous_nation"
+		}
+		is_emperor = no
+	}
+	option = { # Obviously.
+		name = "secret_hre_events.13.a"
+		add_country_modifier = {
+			name = "secret_prestigeous_nation"
+			duration = 1825
+		}
+	}
+	mean_time_to_happen = {
+		years = 7
+	}
+}
+
+
+
 

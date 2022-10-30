@@ -250,3 +250,6 @@ secret_blut_heir_diplomatic = {
 secret_blut_heir_administrative = {
 	global_tax_modifier = 0.1
 }
+secret_prestigeous_nation = {
+	ae_impact = -0.20
+}
