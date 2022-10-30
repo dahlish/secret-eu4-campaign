@@ -281,6 +281,7 @@ country_event = { # [Nation] seeks aid in war for the empire.
 			limit = {
 				in_league = protestant
 				is_part_of_hre = yes
+				ai = no
 			}
 
 			country_event = {
@@ -309,6 +310,7 @@ country_event = { # [Nation] seeks aid in war for the empire.
 			limit = {
 				in_league = protestant
 				is_part_of_hre = yes
+				ai = no
 			}
 
 			country_event = {
@@ -437,3 +439,5 @@ province_event = { # Gold discovered in [Province]
 		years = 300
 	}
 }
+
+
