@@ -12,7 +12,7 @@ country_event = { # Icelandic missionaries arrives
 	option = { # Let them stay.
 		name = "secret_scandinavian_events.1.a"
 		ai_chance = {
-			factor = 75
+			factor = 100
 		}
 
 		add_country_modifier = {
@@ -38,7 +38,7 @@ country_event = { # Icelandic missionaries arrives
 	option = { # Arrest them
 		name = "secret_scandinavian_events.1.b"
 		ai_chance = {
-			factor = 25
+			factor = 0
 		}
 		ICE = {
 			add_casus_belli = {

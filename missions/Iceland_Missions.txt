@@ -90,18 +90,6 @@ tradition = {
 					days = "30"
 				}
 			}
-			NOR = {
-				country_event = {
-					id = secret_scandinavian_events.1
-					days = "18"
-				}
-			}
-			DAN = {
-				country_event = {
-					id = secret_scandinavian_events.1
-					days = "26"
-				}
-			}
 		}
 	}
 	god_tier = {
