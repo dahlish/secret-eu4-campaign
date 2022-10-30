@@ -192,6 +192,12 @@ country_event = { # Icelandic missionaries spread to Gotland
 				tag = GOT
 				was_tag = GOT
 			}
+			NOT = {
+				has_country_flag = "secret_norse_reformation"
+			}
+			NOT = {
+				religion = norse_pagan_reformed
+			}
 		}
 	}
 	option = { # Follow the Swedish example.
@@ -352,8 +358,13 @@ country_event = { # Norse converts demands change of ways
 
 	trigger = {
 		has_country_flag = "secret_got_norse_missionaries"
-		NOT = {
-			religious_unity = 0.3
+		OR = {
+			NOT = {
+				religious_unity = 0.3
+			}
+			all_owned_province = {
+				religion = norse_pagan_reformed
+			}
 		}
 	}
 	option = {
