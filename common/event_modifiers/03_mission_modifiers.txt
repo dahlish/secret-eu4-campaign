@@ -34,3 +34,18 @@ spread_norse_modifier = {
 	enforce_religion_cost = -0.5
 	global_missionary_strength = 0.03
 }
+
+win_religious_war_modifier = {
+	manpower_in_true_faith_provinces = 0.1
+	global_attacker_dice_roll_bonus = 1
+	force_march_free = yes
+	heavy_ship_cost = -0.2
+	galley_cost = -0.2
+}
+
+become_emperor_modifier = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.1
+	envoy_travel_time = -0.2
+	build_cost = -0.2
+}
