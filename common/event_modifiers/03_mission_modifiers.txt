@@ -49,3 +49,10 @@ become_emperor_modifier = {
 	envoy_travel_time = -0.2
 	build_cost = -0.2
 }
+
+genua_trade_modifier = {
+	light_ship_cost = -0.1
+	galley_cost = -0.1
+	country_diplomatic_power = 1
+	mercantilism_cost = -0.3
+}

@@ -97,8 +97,9 @@ tradition = {
 		position = 4
 		required_missions = { spread_norse }
 		trigger = {
-			is_defender_of_faith_of_tier = 5
+			religious_unity = 1
 			religion = norse_pagan_reformed
+			is_year = 1550
 		}
 		effect = {
 			add_prestige = 30
