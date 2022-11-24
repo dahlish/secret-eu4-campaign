@@ -71,11 +71,12 @@ tradition = {
 		position = 3
 		required_missions = { focus_on_trade }
 		trigger = {
-				num_of_owned_provinces_with = {
-					value = 7
+			calc_true_if = {
+				all_country = {
 					religion = norse_pagan_reformed
 				}
-			religious_unity = 1
+				amount = 5
+			}
 		}
 		effect = {
 			add_country_modifier = {
@@ -103,11 +104,14 @@ tradition = {
 		}
 		effect = {
 			add_prestige = 30
-			create_vassal = PAP
+			add_casus_belli = {
+                type = cb_vassalize_mission
+                target = PAP
+            }
  	}
 }
 	colonial = {
-		icon = mission_rb_settle_the_north
+		icon = mission_settlers_north_america
 		position = 5
 		required_missions = {a_path_to_choose}
 		provinces_to_highlight = {
@@ -148,9 +152,9 @@ tradition = {
 			area = tasmania_area
 		}
 		trigger = {
-			#country_or_non_sovereign_subject_holds = root 
-			#colonial_region = tasmania_area
-			
+			tasmania_area = {
+				country_or_non_sovereign_subject_holds = root
+			}
 		}
 		effect = {
 			add_country_modifier = {
@@ -188,7 +192,7 @@ first_steps = {
 	}
 }
 build_infrastructure = {
-		icon = mission_norwegian_ship
+		icon = mission_develop_visby
 		position = 2
 		required_missions = {first_steps}
 		trigger = { 
@@ -202,7 +206,7 @@ build_infrastructure = {
 			}
 }
 establishment_of_a_fleet = {
-		icon = mission_norwegian_ship
+		icon = mission_marines
 		position = 3
 		required_missions = {build_infrastructure}
 		trigger = { 
@@ -217,7 +221,7 @@ establishment_of_a_fleet = {
 	}
 
 a_path_to_choose = {
-		icon = mission_rb_scottish_north_sea_trade
+		icon = mission_the_kalmar_union
 		position = 4
 		required_missions = {establishment_of_a_fleet}
 		trigger = { 
@@ -348,7 +352,7 @@ economy = {
 		tag = ICE
 	}
 fifty_cents = {
-		icon = mission_alliances
+		icon = mission_bengal_entrepot
 		position = 1
 		required_missions = { }
 		trigger = {
@@ -363,7 +367,7 @@ fifty_cents = {
 		}
 	}
 gather_ducats = { 
-		icon = mission_alliances
+		icon = mission_university_of_copenhagen
 		position = 2
 		required_missions = {fifty_cents}
 		trigger = {		
@@ -418,7 +422,7 @@ expansion = {
 		position = 5
 		required_missions = {a_path_to_choose}
 		trigger = {
-		has_country_modifier = "secret_iceland_tall_path"
+		has_country_modifier = "secret_iceland_conquest_path"
 				grown_by_states = 7
 	}
 		effect = {
@@ -430,7 +434,7 @@ expansion = {
 	}			
 }
 an_option = {
-		icon = mission_rb_scottish_north_sea_trade
+		icon = mission_danish_flag
 		position = 6
 		required_missions = {expansion}
 		provinces_to_highlight = {
