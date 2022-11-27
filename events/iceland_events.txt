@@ -241,11 +241,15 @@ country_event = {
 		}
 
 		add_prestige = 50
-		add_historical_rival = DAN
 
 		add_country_modifier = {
 			name = "secret_liberty_protected"
 			duration = 3650
+		}
+
+		add_historical_rival = DAN
+		DAN = {
+			add_historical_rival = ICE
 		}
 	}
 }
