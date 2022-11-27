@@ -122,7 +122,10 @@ country_event = {
 	}
 
 	trigger = {
-		has_country_flag = "secret_hre_players"
+		OR = {
+			has_country_flag = "secret_hre_players"
+			is_part_of_hre = yes
+		}
 		OR = {
 			any_subject_country = {
 				is_elector = yes
@@ -132,6 +135,7 @@ country_event = {
 
 		religion = protestant
 		is_year = 1500
+		ai = no
 	}
 
 	option = { #The Empire needs to be modernised.
