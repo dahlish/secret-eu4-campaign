@@ -1,19 +1,12 @@
-#Riga-Poland-Gotland Alliances
 alliance = {
 	first = POL
+	second = GOT
+	start_date = 1444.1.1
+	end_date = 1550.1.1
+}
+vassal = {
+	first = GOT
 	second = RIG
-	start_date = 1444.1.1
-	end_date = 1550.1.1
-}
-alliance = {
-	first = POL
-	second = GOT
-	start_date = 1444.1.1
-	end_date = 1550.1.1
-}
-alliance = {
-	first = RIG
-	second = GOT
 	start_date = 1444.1.1
 	end_date = 1550.1.1
 }
