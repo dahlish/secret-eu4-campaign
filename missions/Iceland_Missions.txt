@@ -82,7 +82,6 @@ tradition = {
 			add_country_modifier = {
 				name = spread_norse_modifier
 				duration = -1
-				desc = "desc_spread_norse_modifier"
 			}
 
 			SWE = {
@@ -140,7 +139,6 @@ tradition = {
 			add_country_modifier = {
 				name = colonial_modifier
 				duration = -1
-				desc = "desc_colonial_modifier"
 			}
 			}
 	}
@@ -160,7 +158,6 @@ tradition = {
 			add_country_modifier = {
 				name = coldest_north_and_south_modifier
 				duration = -1
-				desc = "desc_coldest_north_and_south_modifier"
 			}
 		}
 	}
@@ -256,7 +253,6 @@ tall = {
 			add_country_modifier = {
 				name = tall_modifier
 				duration = -1
-				desc = "desc_tall_modifier"
 			}
 			}
 		}
@@ -377,7 +373,6 @@ gather_ducats = {
 			add_country_modifier = {
 				name = gather_ducats_modifier
 				duration = -1
-				desc = "desc_gather_ducats_modifier"
 			}
 			}	
 }
@@ -412,7 +407,6 @@ intercity_express = {
 			add_province_modifier = { 
     		name = intercity_express_modifier
     		duration = -1 
-			desc = "desc_intercity_express_modifier"
 			}
 		}
 		}
@@ -429,7 +423,6 @@ expansion = {
 			add_country_modifier = {
 				name = expansion_modifier
 				duration = -1
-				desc = "desc_expansion_modifier"
 			}
 	}			
 }

@@ -27,8 +27,7 @@ visible_all = {
 		effect = { 
 			add_country_modifier = {
 				name = win_religious_war_modifier
-				duration = 1825
-				#desc = "desc_win_religious_war_modifier"
+				duration = 4200
 			}
 		}
 	}
@@ -58,25 +57,60 @@ hre_mission = {
 				add_country_modifier = {
 					name = become_emperor_modifier
 					duration = 3650
-					desc = "desc_become_emperor_modifier"
 				}
 		}
 	}
-	genua_trade = {
-		icon = mission_fish_markets
-		position = 10
-		required_missions = {  }
-		trigger = {
-			trade_company_genua = {
-				is_strongest_trade_power = ROOT
+}
+	muni_mission = {
+		slot = 2
+		generic = no
+		ai = no
+		potential = {
+			OR = {
+				tag = BAV
+				tag = MUN
 			}
 		}
-		effect ={
-			add_country_modifier = {
-				name = genua_trade_modifier
-				duration = 5475
-				desc = "desc_genua_trade_modifier"
+		genua_trade = {
+			icon = mission_fish_markets
+			position = 10
+			required_missions = {  }
+			trigger = {
+				trade_company_genua = {
+					is_strongest_trade_power = ROOT
+				}
+			}
+			effect ={
+				add_country_modifier = {
+					name = genua_trade_modifier
+					duration = 5475
+				}
 			}
 		}
 	}
-}
+	jonas_mission = {
+		slot = 3
+		generic = no
+		ai = no
+		potential = {
+			OR = {
+				tag = SWE
+			}
+		}
+		baltic_trade = {
+			icon = mission_fish_markets
+			position = 10
+			required_missions = {  }
+			trigger = {
+				trade_company_baltic_sea = {
+					is_strongest_trade_power = ROOT
+				}
+			}
+			effect ={
+				add_country_modifier = {
+					name = genua_trade_modifier
+					duration = 5475
+				}
+			}	
+		}
+	}
