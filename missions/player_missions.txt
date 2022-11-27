@@ -115,3 +115,29 @@ hre_mission = {
 			}	
 		}
 	}
+	philipp_mission = {
+		slot = 4
+		generic = no
+		ai = no
+		potential = {
+			OR = {
+				tag = NED
+				tag = FRI
+			}
+		}
+		spicy_spices = {
+			icon = mission_bengal_entrepot
+			position = 10
+			required_missions = {  }
+			trigger = {
+				brunei_area = {
+					country_or_non_sovereign_subject_holds = root
+				}
+			}
+			effect = {
+				100 = {
+					change_trade_goods = spices
+				}
+			}
+		}
+	}
