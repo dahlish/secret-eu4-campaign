@@ -151,15 +151,17 @@ country_event = {
 				}
 			}
 			else = {
-				capital_scope = {
-					add_base_production = 10
-					add_base_tax = 10
-					add_base_manpower = 10
-				}
-				random_owned_province = {
-					add_base_production = 10
-					add_base_tax = 10
-					add_base_manpower = 10
+				ICE = {
+					capital_scope = {
+						add_base_production = 10
+						add_base_tax = 10
+						add_base_manpower = 10
+					}
+					random_owned_province = {
+						add_base_production = 10
+						add_base_tax = 10
+						add_base_manpower = 10
+					}
 				}
 			}
 		}
@@ -168,6 +170,17 @@ country_event = {
 	}
 	option = { #We will never be slaves, we will be liberators.
 		name = "secret_iceland_events.2.b"
+
+		trigger = {
+			exists = NOR
+			NOR = {
+				OR = {
+					junior_union_with = DAN
+					junior_union_with = SWE
+					junior_union_with = GOT
+				}
+			}
+		}
 		add_prestige = 50
 		support_independence_of = NOR
 
