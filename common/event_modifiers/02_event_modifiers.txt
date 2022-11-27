@@ -6,7 +6,7 @@ birthplace_of_the_reformation = {
 	global_missionary_strength = 0.005
 }
 secret_increased_aggressive_expansion_phase_one_hard = {
-	ae_impact = 1
+	ae_impact = 0.75
 	development_cost_modifier = -0.25
 }
 secret_increased_aggressive_expansion_phase_one_medium = {
