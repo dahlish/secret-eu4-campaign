@@ -11,6 +11,10 @@ country_event = {
 	immediate = {
 		save_event_target_as = gets_vassal_event_target
 		random_elector = {
+			limit = {
+				ai = yes
+				is_subject = no
+			}
 			save_event_target_as = becomes_vassal_event_target
 		}
 	}
