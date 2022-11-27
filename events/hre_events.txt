@@ -10,6 +10,9 @@ country_event = {
 
 	immediate = {
 		save_event_target_as = gets_vassal_event_target
+		random_elector = {
+			save_event_target_as = becomes_vassal_event_target
+		}
 	}
 	
 	trigger = {
@@ -32,7 +35,7 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-		BRA = {
+		event_target:becomes_vassal_event_target = {
 			elector = no
 		}
 		elector = yes
@@ -51,7 +54,7 @@ country_event = {
 			duration = 1825
 		}
 
-		BRA = {
+		event_target:becomes_vassal_event_target = {
 				country_event = {
 				id = secret_hre_events.3
 				days = 30
