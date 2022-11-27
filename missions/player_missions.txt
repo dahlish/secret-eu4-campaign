@@ -10,6 +10,7 @@ visible_all = {
 		position = 10
 		required_missions = {  }
 		trigger = {
+			is_year = 1530
 			OR = {
 				AND = {
 					hre_religion_locked = yes
@@ -27,7 +28,7 @@ visible_all = {
 			add_country_modifier = {
 				name = win_religious_war_modifier
 				duration = 1825
-				desc = "desc_win_religious_war_modifier"
+				#desc = "desc_win_religious_war_modifier"
 			}
 		}
 	}
