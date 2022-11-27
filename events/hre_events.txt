@@ -16,10 +16,13 @@ country_event = {
 	}
 	
 	trigger = {
-		has_country_flag = "secret_hre_players"
+		OR = {
+			has_country_flag = "secret_hre_players"
+			is_part_of_hre = yes
+		}
+		ai = no
 		is_elector = no
-		exists = BRA
-		is_year = 1500
+		is_year = 1490
 		OR = {
 			NOT = {
 				tag = UBV
@@ -63,7 +66,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 600
+		months = 24
 	}
 }
 
@@ -78,27 +81,27 @@ country_event = {
 
 	option = { #It is already too late.
 		ai_chance = {
-			factor = 100
+			factor = 80
 		}
 		name = "secret_hre_events.3.a"
 		event_target:gets_vassal_event_target = {
 			create_subject = {
 				subject_type = vassal
-				subject = BRA
+				subject = event_target:becomes_vassal_event_target
 			}
 		}
 		add_corruption = 5
 	}
 	option = { #We cannot let this happen!
 		ai_chance = {
-			factor = 0
+			factor = 20
 		}
 		name = "secret_hre_events.3.b"
 
 		event_target:gets_vassal_event_target = {
 			add_casus_belli = {
 				type = cb_vassalize_mission
-				target = BRA
+				target = event_target:becomes_vassal_event_target
 			}
 		}
 		add_mil_power = 100
