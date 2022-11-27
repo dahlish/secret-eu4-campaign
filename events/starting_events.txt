@@ -40,7 +40,6 @@ country_event = {
         OR = {
             tag = POL
             tag = GOT
-            tag = RIG
         }
 
         AND = {
