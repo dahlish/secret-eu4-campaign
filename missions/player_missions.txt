@@ -6,7 +6,7 @@ visible_all = {
 		ai = no
 	}
 	win_religious_war = {
-		icon = mission_fish_markets
+		icon = mission_european_church
 		position = 10
 		required_missions = {  }
 		trigger = {
@@ -41,13 +41,13 @@ hre_mission = {
 		OR = {
 			tag = BAV
 			tag = BRU
-			tag = MUN
+			tag = UBV
 			tag = HAN
 			tag = NED
 		}
 	}
 	become_emperor = {
-		icon = mission_fish_markets
+		icon = mission_empire
 		position = 10
 		required_missions = {  }
 		trigger = {
@@ -68,11 +68,11 @@ hre_mission = {
 		potential = {
 			OR = {
 				tag = BAV
-				tag = MUN
+				tag = UBV
 			}
 		}
 		genua_trade = {
-			icon = mission_fish_markets
+			icon = mission_rb_scottish_north_sea_trade
 			position = 10
 			required_missions = {  }
 			trigger = {
@@ -95,10 +95,11 @@ hre_mission = {
 		potential = {
 			OR = {
 				tag = SWE
+				tag = SCA
 			}
 		}
 		baltic_trade = {
-			icon = mission_fish_markets
+			icon = mission_rb_scottish_north_sea_trade
 			position = 10
 			required_missions = {  }
 			trigger = {
