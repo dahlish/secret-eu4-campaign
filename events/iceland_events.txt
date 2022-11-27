@@ -231,6 +231,23 @@ country_event = {
 		add_years_of_income = -3
 	}
 
+	option = { #We will never give up our freedom.
+		name = "secret_iceland_events.2.c"
+
+		trigger = {
+			NOT = {
+				exists = NOR
+			}
+		}
+
+		add_prestige = 50
+		add_historical_rival = DAN
+
+		add_country_modifier = {
+			name = "secret_liberty_protected"
+			duration = 3650
+		}
+	}
 }
 
 country_event = {
