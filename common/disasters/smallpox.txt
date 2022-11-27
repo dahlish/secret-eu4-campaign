@@ -2,7 +2,11 @@ smallpox_disaster = {
 	potential = {
 		is_year = 1625
 		any_owned_province = {
-			continent = europe
+			OR = {
+				continent = europe
+				continent = north_america
+				continent = south_america
+			}
 			development = 18
 		}
 		NOT = {
