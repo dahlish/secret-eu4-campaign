@@ -265,7 +265,7 @@ generic = {
 	potential = {
 		tag = ICE
 	}
-	home_trade_node = {
+	trade_node = {
 		icon = mission_war_chest
 		position = 1
 		required_missions = {  }
@@ -283,7 +283,7 @@ generic = {
 			}
 		}
 	}
-	build_army_mission = {
+	army_mission = {
 		icon = mission_build_up_to_force_limit
 		position = 2
 		required_missions = {  }
@@ -297,7 +297,7 @@ generic = {
 			}
 		}
 	}
-	defender_of_the_faith = {
+	the_faith = {
 		icon = mission_european_church
 		position = 3
 		required_missions = {  }
@@ -313,7 +313,7 @@ generic = {
 			}
 		}
 	}
-building_alliances = {
+building_allianc = {
 		icon = mission_alliances
 		position = 4
 		required_missions = {  }
