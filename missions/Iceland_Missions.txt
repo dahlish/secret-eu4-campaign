@@ -27,8 +27,8 @@ tradition = {
 		position = 2
 		required_missions = { fishing_grounds }
 		trigger = {
-			owns_core_province = 370
-			370 = {
+			owns_core_province = 371
+			371 = {
 							if = {
 								limit = { has_dlc = "Dharma" }
 								province_has_center_of_trade_of_level = 3
