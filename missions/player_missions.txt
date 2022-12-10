@@ -10,19 +10,19 @@ visible_all = {
 		position = 10
 		required_missions = {  }
 		trigger = {
-			is_year = 1530
 			OR = {
+				tag = FRI
+				tag = BAV
+				tag = BRU
+				tag = CLI
+				tag = POL
+				tag = SWE
+			}
+			
 				AND = {
 					hre_religion_locked = yes
-					in_league = protestant
 					hre_religion = protestant
 				}
-				AND = {
-					hre_religion_locked = yes
-					in_league = catholic
-					hre_religion = catholic
-				}
-			}
 		}
 		effect = { 
 			add_country_modifier = {
