@@ -147,6 +147,130 @@ country_decisions = {
 		}
 	}
 
+	secret_promote_cilli_elector = {
+		potential = {
+			ai = no
+			is_emperor = yes
+			AND = {
+				CLI = {
+					is_elector = no
+				}
+				DAL = {
+					is_elector = no
+				}
+			}
+		}
+		allow = {
+			if = {
+				limit = { 
+					exists = CLI
+				}
+				has_opinion = {
+					who = CLI
+					value = 100
+				}
+			}
+			else_if = {
+				limit = {
+					exists = DAL
+				}
+				has_opinion = {
+					who = DAL
+					value = 100
+				}
+			}
+			is_at_war = no
+			dip_power = 100
+		}
+		effect = {
+			random_elector = {
+				limit = {
+					ai = yes
+				}
+				elector = no
+			}
+			if = {
+				limit = {
+					exists = CLI
+				}
+				CLI = {
+					elector = yes
+				}
+			}
+			else_if = {
+				limit = { 
+					exists = DAL
+				}
+				DAL = {
+					elector = yes
+				}
+			}
+			add_dip_power = -100
+		}
+	}
+	secret_promote_friesland_elector = {
+		potential = {
+			ai = no
+			is_emperor = yes
+			AND = {
+				FRI = {
+					is_elector = no
+				}
+				NED = {
+					is_elector = no
+				}
+			}
+		}
+		allow = {
+			if = {
+				limit = { 
+					exists = FRI
+				}
+				has_opinion = {
+					who = FRI
+					value = 100
+				}
+			}
+			else_if = {
+				limit = {
+					exists = NED
+				}
+				has_opinion = {
+					who = NED
+					value = 100
+				}
+			}
+			is_at_war = no
+			dip_power = 100
+		}
+		effect = {
+			random_elector = {
+				limit = {
+					ai = yes
+				}
+				elector = no
+			}
+			if = {
+				limit = {
+					exists = FRI
+				}
+				FRI = {
+					elector = yes
+				}
+			}
+			else_if = {
+				limit = { 
+					exists = NED
+				}
+				NED = {
+					elector = yes
+					set_in_empire = yes
+				}
+			}
+			add_dip_power = -100
+		}
+	}
+
 	secret_blut_heir = {
 		potential = {
 			has_heir = yes
@@ -172,65 +296,6 @@ country_decisions = {
 				id = secret_religious_events.3
 			}
 			kill_heir = yes # This is no error. It works. The intellisense in vscode is bugged.
-		}
-	}
-
-	secret_promote_cilli_elector = {
-		potential = {
-			ai = no
-			is_emperor = yes
-		}
-		allow = {
-			OR = {
-				has_opinion = {
-					who = CLI
-					value = 100
-				}
-				has_opinion = {
-					who = DAL
-					value = 100
-				}
-			}
-			is_at_war = no
-			dip_power = 100
-		}
-		effect = {
-			BRA = {
-				elector = no
-			}
-			CLI = {
-				elector = yes
-			}
-			add_dip_power = -100
-		}
-	}
-	secret_promote_friesland_elector = {
-		potential = {
-			ai = no
-			is_emperor = yes
-		}
-		allow = {
-			OR = {
-				has_opinion = {
-					who = FRI
-					value = 100
-				}
-				has_opinion = {
-					who = NED
-					value = 100
-				}
-			}
-			is_at_war = no
-			dip_power = 100
-		}
-		effect = {
-			TNT = {
-				elector = no
-			}
-			CLI = {
-				elector = yes
-			}
-			add_dip_power = -100
 		}
 	}
 	
