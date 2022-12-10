@@ -222,11 +222,16 @@ a_path_to_choose = {
 		position = 4
 		required_missions = {establishment_of_a_fleet}
 		trigger = { 
-			all_owned_province = {
+			370 = { # Changed to these two provinces to prevent this mission from never completing due to conquest
 			base_tax = 7
 			base_manpower = 7
 			base_production = 7
-		}
+			}
+			371 = {
+				base_tax = 7
+				base_manpower = 7
+				base_production = 7
+			}
 			}
 		effect = {
 			country_event = {
