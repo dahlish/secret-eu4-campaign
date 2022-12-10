@@ -392,13 +392,17 @@ province_event = { # Copper discovered in [Province]
 	trigger = {
 		owner = {
 			ai = no
-			is_part_of_hre = yes
 			NOT = {
 				has_country_flag = "secret_found_copper"
 			}
 		}
+		NOT = {
+			trade_goods = gold
+		}
+		NOT = {
+			trade_goods = copper
+		}
 		base_production = 3
-		trade_goods = iron
 	}
 	option = {
 		name = "secret_hre_events.11.a"
@@ -408,7 +412,7 @@ province_event = { # Copper discovered in [Province]
 		}
 	}
 	mean_time_to_happen = {
-		years = 100
+		years = 300
 	}
 }
 
@@ -450,7 +454,7 @@ province_event = { # Gold discovered in [Province]
 		change_trade_goods = gold
 	}
 	mean_time_to_happen = {
-		years = 300
+		years = 600
 	}
 }
 

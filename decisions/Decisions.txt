@@ -174,5 +174,64 @@ country_decisions = {
 			kill_heir = yes # This is no error. It works. The intellisense in vscode is bugged.
 		}
 	}
+
+	secret_promote_cilli_elector = {
+		potential = {
+			ai = no
+			is_emperor = yes
+		}
+		allow = {
+			OR = {
+				has_opinion = {
+					who = CLI
+					value = 100
+				}
+				has_opinion = {
+					who = DAL
+					value = 100
+				}
+			}
+			is_at_war = no
+			dip_power = 100
+		}
+		effect = {
+			BRA = {
+				elector = no
+			}
+			CLI = {
+				elector = yes
+			}
+			add_dip_power = -100
+		}
+	}
+	secret_promote_friesland_elector = {
+		potential = {
+			ai = no
+			is_emperor = yes
+		}
+		allow = {
+			OR = {
+				has_opinion = {
+					who = FRI
+					value = 100
+				}
+				has_opinion = {
+					who = NED
+					value = 100
+				}
+			}
+			is_at_war = no
+			dip_power = 100
+		}
+		effect = {
+			TNT = {
+				elector = no
+			}
+			CLI = {
+				elector = yes
+			}
+			add_dip_power = -100
+		}
+	}
 	
 }
