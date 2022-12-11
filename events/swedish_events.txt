@@ -1,0 +1,170 @@
+namespace = secret_swedish_events
+
+country_event = { # The Dacke Feud
+	id = secret_swedish_events.1
+	title = "the_dacke_feud.1.t"
+	desc = "secret_swedish_events.1.desc"
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			3 = {
+				add_core = SMA
+			}
+			4166 = {
+				add_core = SMA
+			}	
+			2 = {
+				add_core = SMA
+			}
+			4163 = {
+				add_core = SMA
+			}
+			1982 = {
+				add_core = SMA
+			}
+			4165 = {
+				add_core = SMA
+			}
+
+			release = SMA
+
+			SMA = {
+				define_ruler = {
+					name = "Nils"
+					dynasty = "Dacke"
+					mil = 5
+					dip = 3
+					adm = 2
+					claim = 50
+				}
+				add_manpower = 50
+				add_treasury = 15000
+				change_unit_type = western
+			}
+		}
+	}
+
+	option = { # Nils Dacke is nothing but a pretender and will be crushed.
+		name = "secret_swedish_events.1.a"
+
+		add_prestige = -25
+
+		SMA = {
+			declare_war_with_cb = {
+				casus_belli = cb_independence_war
+				who = SWE
+			}
+		}
+
+		hidden_effect = {	
+			SMA = {
+				define_ruler_to_general = {
+					fire = 2
+					shock = 5
+					manuever = 5
+					siege = 1
+				}
+
+				add_country_modifier = {
+					name = secret_dacke_war_modifier
+					duration = 3650
+				}
+			}
+			3 = {
+				artillery = SMA 
+				artillery = SMA 
+				artillery = SMA 
+				artillery = SMA 
+				artillery = SMA 
+				artillery = SMA 
+			}
+			4166 = {
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+				infantry = SMA
+			}
+			1982 = {
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
+			}
+			1982 = {
+				heavy_ship = SMA
+				heavy_ship = SMA
+				heavy_ship = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+				galley = SMA
+			}
+		}
+	}
+}
