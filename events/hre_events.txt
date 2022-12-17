@@ -488,5 +488,19 @@ country_event = { # [Nation] recognized as a prestigeous nation
 }
 
 
+country_event = { #Compensation for Bavaria
+	id = secret_hre_events.14
+	title = "secret_hre_events.14.t"
+	desc = "secret_hre_events.14.desc"
 
+	fire_only_once = yes
+
+	trigger = {
+		tag = BAV
+	}
+	option = {
+		name = "secret_hre_events.14.a"
+		add_dip_power = 200
+	}
+}
 
