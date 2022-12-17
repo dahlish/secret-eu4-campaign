@@ -40,7 +40,7 @@ country_event = { # The Dacke Feud
 					claim = 50
 				}
 				add_manpower = 50
-				add_treasury = 15000
+				add_treasury = 10000
 				change_unit_type = western
 			}
 		}
@@ -57,6 +57,9 @@ country_event = { # The Dacke Feud
 				who = SWE
 			}
 		}
+		DAN = {
+			join_all_offensive_wars_of = SMA
+		}
 
 		hidden_effect = {	
 			SMA = {
@@ -72,9 +75,17 @@ country_event = { # The Dacke Feud
 					duration = 3650
 				}
 			}
+			DAN = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.7
+						cavalry = 0.15
+						artillery = 0.15
+					}	
+				}
+				add_manpower = 25
+			}
 			3 = {
-				artillery = SMA 
-				artillery = SMA 
 				artillery = SMA 
 				artillery = SMA 
 				artillery = SMA 
@@ -106,25 +117,16 @@ country_event = { # The Dacke Feud
 				infantry = SMA
 				infantry = SMA
 				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
-				infantry = SMA
 			}
 			1982 = {
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
+				cavalry = SMA
 				cavalry = SMA
 				cavalry = SMA
 				cavalry = SMA
@@ -155,16 +157,140 @@ country_event = { # The Dacke Feud
 				galley = SMA
 				galley = SMA
 				galley = SMA
-				galley = SMA
-				galley = SMA
-				galley = SMA
-				galley = SMA
-				galley = SMA
-				galley = SMA
-				galley = SMA
-				galley = SMA
-				galley = SMA
 			}
+		}
+	}
+}
+
+country_event = {
+	id = secret_swedish_events.2
+	title = "secret_swedish_events.2.t"
+	desc = "secret_swedish_events.2.desc"
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				add_local_autonomy = -75
+			}
+		}
+	}
+
+	trigger = {
+		tag = SWE
+		has_estate_privilege = estate_nobles_statutory_rights
+	}
+	option = {
+		name = "secret_swedish_events.2.a"
+
+		remove_estate_privilege = estate_nobles_statutory_rights
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 30
+		}
+
+		change_estate_land_share = {
+			estate = estate_nobles
+			share = -10
+		}
+		change_estate_land_share = {
+			estate = estate_burghers
+			share = -10
+		}
+		change_estate_land_share = {
+			estate = estate_church
+			share = -10
+		}
+
+		add_treasury = 1000
+		add_manpower = 25
+
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.7
+				cavalry = 0.15
+				artillery = 0.15
+			}	
+		}
+	}
+}
+
+country_event = { # Nils Dacke is victorious.
+	id = secret_swedish_events.3
+	title = "secret_swedish_events.3.t"
+	desc = "secret_swedish_events.3.desc"
+	major = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWE
+		exists = SMA
+		SWE = {
+			NOT = {
+				war_with = SMA
+			}
+			truce_with = SMA
+			has_disaster = the_dacke_feud
+		}
+	}
+	option = { # We will let Dacke rule our nation.
+		ai_chance = {
+			factor = 100
+		}
+		set_country_flag = "secret_dacke_rule"
+		name = "secret_swedish_events.3.a"
+		switch_tag = SMA
+		SMA = {
+			set_country_flag = "has_baltic_agreement"
+			add_country_modifier = {
+				name = "strengthened_baltic_agreement"
+				duration = -1
+			}
+			change_primary_culture = swedish
+			add_accepted_culture = danish
+			add_accepted_culture = finnish
+			add_accepted_culture = norwegian
+			remove_country_modifier = secret_dacke_war_modifier
+		}
+		SWE = {
+			clr_country_flag = "has_baltic_agreement"
+			remove_country_modifier = "strengthened_baltic_agreement"
+		}
+	}
+	option = { # We will reclaim our former lands in due time.
+		name = "secret_swedish_events.3.b"
+		SMA = {
+			remove_country_modifier = secret_dacke_war_modifier
+		}
+	}
+}
+country_event = { # The rest of Sweden joins in with Småland
+	id = secret_swedish_events.4
+	title = "secret_swedish_events.4.t"
+	desc = "secret_swedish_events.4.desc"
+
+	fire_only_once = yes
+	trigger = {
+		SWE = {
+			has_country_flag = "secret_dacke_rule"
+		}
+		ai = no
+		is_at_war = no
+		truce_with = SWE
+		tag = SMA
+	}
+	immediate = {
+		SWE = {
+			every_owned_province = {
+				cede_province = SMA
+			}
+		}
+	}
+	option = { # They are most welcome.
+		name = "secret_swedish_events.4.a"
+		every_owned_province = {
+			add_core = SMA
 		}
 	}
 }
