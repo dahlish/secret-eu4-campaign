@@ -38,6 +38,9 @@ country_event = { # Enables Invite Sweden to Baltic Agreement
 	trigger = {
 		has_country_flag = "has_baltic_agreement"
 		is_year = 1550
+		NOT = {
+			is_year = 1560
+		}
 		AND = {
 			NOT = {
 				has_country_flag = "has_invited_sweden_to_baltic_agreement"
@@ -145,5 +148,218 @@ country_event = { # Sweden rejects the Baltic Agreement.
 			target = SWE
 		}
 		add_prestige = -50
+	}
+}
+
+country_event = { # The Baltic Crisis
+	id = secret_baltic_events.6
+	title = "secret_baltic_events.6.t"
+	desc = "secret_baltic_events.6.desc"
+
+	major = yes
+
+	trigger = {
+		OR = {
+			tag = POL
+			tag = BRU
+			was_tag = BRU
+			was_tag = POL
+		}
+
+		NOT = {
+			has_country_flag = "secret_baltic_crisis"
+		}
+	}
+	option = { # War is inevitable. We need to reach out to everyone.
+		name = "secret_baltic_events.6.a"
+		add_country_modifier = {
+			name = secret_preparation_for_war
+			duration = 1825
+		}
+		set_country_flag = "secret_baltic_crisis"
+	}
+}
+
+country_event = { # The Baltic Crisis
+	id = secret_baltic_events.7
+	title = "secret_baltic_events.7.t"
+	desc = "secret_baltic_events.7.desc"
+
+	major = yes
+
+	trigger = {
+		NOT = {
+			is_year = 1560
+		}
+		ai = no
+		NOT = {
+			has_country_flag = "secret_baltic_crisis"
+		}
+		NOT = {
+			has_country_flag = "secret_baltic_crisis_reached_out"
+		}
+
+		AND = {
+			BRU = {
+				has_country_flag = "secret_baltic_crisis"
+			}
+			POL = {
+				has_country_flag = "secret_baltic_crisis"
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = "secret_baltic_crisis_reached_out"
+		save_event_target_as = secret_assisting_event_target
+	}
+
+	option = { # We will stand by the Kingdom of Poland
+		name = "secret_baltic_events.7.a"
+		if = {
+			limit = {
+				alliance_with = BRU
+			}
+			break_alliance = BRU
+		}
+		POL = { #Fire event "[Nation] will stand by Poland."
+			country_event = {
+				id = secret_baltic_events.8
+			}
+		}
+	}
+	option = { # We will supply the Kingdom of Poland
+	name = "secret_baltic_events.7.b"
+
+	add_years_of_income = -10
+	add_manpower = -15
+
+	POL = { #Fire event "[Nation] will supply Poland."
+		country_event = {
+			id = secret_baltic_events.9
+		}
+	}
+	}
+	option = { # We will stand by the Electorate of Brunswick
+	name = "secret_baltic_events.7.c"
+	if = {
+		limit = {
+			alliance_with = POL
+		}
+		break_alliance = POL
+	}
+	BRU = {
+		country_event = { # Fire event "[Nation] will stand by Brunswick."
+			id = secret_baltic_events.10
+		}
+	}
+		
+	}
+	option = { # We will supply the Electorate of Brunswick
+	name = "secret_baltic_events.7.d"
+	add_years_of_income = -10
+	add_manpower = -15
+		BRU = {
+			country_event = { # Fire event "[Nation] will supply Brunswick."
+				id = secret_baltic_events.11
+			}
+		}
+	}
+	option = { # We shouldn't escalate this conflict any further.
+	name = "secret_baltic_events.7.e"
+		if = {
+			limit = {
+				alliance_with = POL
+			}
+			break_alliance = POL
+		}
+		if = {
+			limit = {
+				alliance_with = BRU
+			}
+			break_alliance = BRU
+		}
+		BRU = {
+			country_event = { # Fire event "[Nation] stays out of the conflict."
+				id = secret_baltic_events.12
+			}
+		}
+		POL = {
+			country_event = { # Fire event "[Nation] stays out of the conflict."
+				id = secret_baltic_events.12
+			}
+		}
+	}
+}
+
+country_event = { # [Nation] will stand by Poland
+	id = secret_baltic_events.8
+	title = "secret_baltic_events.8.t"
+	desc = "secret_baltic_events.8.desc"
+
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_baltic_events.8.a"
+		create_alliance = event_target:secret_assisting_event_target
+	}
+}
+country_event = { # [Nation] will supply Poland
+	id = secret_baltic_events.9
+	title = "secret_baltic_events.9.t"
+	desc = "secret_baltic_events.9.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_baltic_events.9.a"
+		add_years_of_income = 10
+		add_manpower = 10
+		create_general = {
+			tradition = 75
+		}
+	}
+}
+
+country_event = { #[Nation] will stand with Brunswick
+	id = secret_baltic_events.10
+	title = "secret_baltic_events.10.t"
+	desc = "secret_baltic_events.10.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_baltic_events.10.a"
+		create_alliance = event_target:secret_assisting_event_target
+	}
+}
+
+country_event = { #[Nation] will supply Brunswick
+	id = secret_baltic_events.11
+	title = "secret_baltic_events.11.t"
+	desc = "secret_baltic_events.11.desc"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "secret_baltic_events.11.a"
+		add_years_of_income = 10
+		add_manpower = 10
+		create_general = {
+			tradition = 75
+		}
+	}
+}
+
+country_event = { # [Nation] will stay out of the baltic crisis.
+	id = secret_baltic_events.12
+	title = "secret_baltic_events.12.t"
+	desc = "secret_baltic_events.12.desc"
+
+	is_triggered_only = yes
+
+	option = { # That's unfortunate.
+		name = "secret_baltic_events.12.a"
 	}
 }
