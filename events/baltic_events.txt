@@ -214,24 +214,10 @@ country_event = { # The Baltic Crisis
 		save_event_target_as = secret_assisting_event_target
 	}
 
-	option = { # We will stand by the Kingdom of Poland
-		name = "secret_baltic_events.7.a"
-		if = {
-			limit = {
-				alliance_with = BRU
-			}
-			break_alliance = BRU
-		}
-		POL = { #Fire event "[Nation] will stand by Poland."
-			country_event = {
-				id = secret_baltic_events.8
-			}
-		}
-	}
 	option = { # We will supply the Kingdom of Poland
 	name = "secret_baltic_events.7.b"
 
-	add_years_of_income = -10
+	add_years_of_income = -5
 	add_manpower = -15
 
 	POL = { #Fire event "[Nation] will supply Poland."
@@ -240,24 +226,9 @@ country_event = { # The Baltic Crisis
 		}
 	}
 	}
-	option = { # We will stand by the Electorate of Brunswick
-	name = "secret_baltic_events.7.c"
-	if = {
-		limit = {
-			alliance_with = POL
-		}
-		break_alliance = POL
-	}
-	BRU = {
-		country_event = { # Fire event "[Nation] will stand by Brunswick."
-			id = secret_baltic_events.10
-		}
-	}
-		
-	}
 	option = { # We will supply the Electorate of Brunswick
 	name = "secret_baltic_events.7.d"
-	add_years_of_income = -10
+	add_years_of_income = -5
 	add_manpower = -15
 		BRU = {
 			country_event = { # Fire event "[Nation] will supply Brunswick."
@@ -292,19 +263,6 @@ country_event = { # The Baltic Crisis
 	}
 }
 
-country_event = { # [Nation] will stand by Poland
-	id = secret_baltic_events.8
-	title = "secret_baltic_events.8.t"
-	desc = "secret_baltic_events.8.desc"
-
-
-	is_triggered_only = yes
-
-	option = {
-		name = "secret_baltic_events.8.a"
-		create_alliance = event_target:secret_assisting_event_target
-	}
-}
 country_event = { # [Nation] will supply Poland
 	id = secret_baltic_events.9
 	title = "secret_baltic_events.9.t"
@@ -314,24 +272,11 @@ country_event = { # [Nation] will supply Poland
 
 	option = {
 		name = "secret_baltic_events.9.a"
-		add_years_of_income = 10
+		add_years_of_income = 5
 		add_manpower = 10
 		create_general = {
 			tradition = 75
 		}
-	}
-}
-
-country_event = { #[Nation] will stand with Brunswick
-	id = secret_baltic_events.10
-	title = "secret_baltic_events.10.t"
-	desc = "secret_baltic_events.10.desc"
-
-	is_triggered_only = yes
-
-	option = {
-		name = "secret_baltic_events.10.a"
-		create_alliance = event_target:secret_assisting_event_target
 	}
 }
 
@@ -344,7 +289,7 @@ country_event = { #[Nation] will supply Brunswick
 
 	option = {
 		name = "secret_baltic_events.11.a"
-		add_years_of_income = 10
+		add_years_of_income = 5
 		add_manpower = 10
 		create_general = {
 			tradition = 75
