@@ -15,6 +15,9 @@ the_dacke_feud = {
 				area = skaneland_area
 			}
 		}
+		NOT = {
+			is_year = 1550
+		}
 		NOT = { has_country_modifier = swe_support_of_the_peasantry }
 	}
 
@@ -26,6 +29,8 @@ the_dacke_feud = {
 		OR = {
 			has_country_modifier = vasa_centralization_reforms
 			NOT = { average_home_autonomy = 10 }
+		}
+		NOT = {
 			is_year = 1550
 		}
 	}
