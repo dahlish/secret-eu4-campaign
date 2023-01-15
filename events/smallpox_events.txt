@@ -75,6 +75,58 @@ country_event = { # New deaths in [Get.Name]
 	}
 }
 
+country_event = { # Mass deaths in [smallpox_death_province_target.GetName]
+	id = secret_smallpox_events.15
+	title = "secret_smallpox_events.15.t"
+	desc = "secret_smallpox_events.15.desc"
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				development = 25
+			}
+			save_event_target_as = smallpox_death_province_target
+		}
+	}
+
+	trigger = {
+		any_owned_province = {
+			development = 25
+		}
+		has_disaster = smallpox_disaster
+	}
+	option = { 
+		name = "secret_smallpox_events.15.a"
+		random_owned_province = {
+			limit = {
+				development = 25
+			}
+			if = {
+				limit = {
+					base_tax = 6
+				}
+				add_base_tax = -5
+			}
+			if = {
+				limit = {
+					base_production = 6
+				}
+				add_base_production = -5
+			}
+			if = {
+				limit = {
+					base_manpower = 6
+				}
+				add_base_manpower = -5
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+}
+
 country_event = { # Subsidies for failing businesses
 	id = secret_smallpox_events.2
 	title = "secret_smallpox_events.2.t"
@@ -565,6 +617,9 @@ province_event = {
 			}
 			NOT = {
 				has_disaster = smallpox_disaster
+			}
+			NOT = {
+				has_country_flag = "had_smallpox_disaster"
 			}
 		}
 		NOT = {
